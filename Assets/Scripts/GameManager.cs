@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     public void DisableCard()
     {
-        currentObj.SetActive(false);
+        if (currentObj != null)
+        {
+            currentObj.SetActive(false);
+        }
     }
 }
