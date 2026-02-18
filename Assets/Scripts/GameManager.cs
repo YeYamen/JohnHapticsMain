@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] float rayLength = 20;
     GameObject currentObj;
+
+    [SerializeField] TMP_Text debugText;
+    [SerializeField] GameObject lastObj;
 
     public void ShootRaycast(Transform obj)
     {
@@ -27,11 +31,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DisableCard()
+    public void ChooseObject()
     {
         if (currentObj != null)
         {
+            
+            lastObj.SetActive(true);
+
             currentObj.SetActive(false);
+
+            if (debugText.enabled)
+            {
+                debugText.text = "Chosen object : " + currentObj.name + "\n Last object : " + lastObj.name;
+            }
+
+            lastObj = currentObj;
         }
     }
 }
