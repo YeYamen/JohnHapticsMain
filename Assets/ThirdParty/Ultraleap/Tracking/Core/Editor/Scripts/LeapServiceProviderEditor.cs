@@ -141,6 +141,7 @@ namespace Leap.Unity
             }
 
             EditorGUILayout.PropertyField(property);
+            Debug.Log((int)LeapServiceProvider.MultipleDeviceMode.Specific);
         }
 
 
