@@ -6,12 +6,12 @@ using UnityEngine.UIElements;
 
 public class CardBehaviour : Raycastables
 {
-    Vector3 closeUp = new UnityEngine.Vector3(-0.25f, 0.1f, -0.3f);
+    Vector3 closeUp = new UnityEngine.Vector3(0.5f, 0.05f, -0.3f);
     Vector3 originalPos;
 
     float minAngle = -20f;
     float maxAngle = 20f;
-    float turnSpeed = 0.5f;
+    float turnSpeed = 0.4f;
 
     private void Start()
     {
