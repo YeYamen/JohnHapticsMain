@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &272980308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5786291803916237746, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+  m_PrefabInstance: {fileID: 8468149679413346057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370a3e1ab4204a54886aa667e5049124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hapticsDevice: {fileID: 0}
+  library: {fileID: 0}
   rayLength: 20
   debugText: {fileID: 2084167285}
   lastObj: {fileID: 1348656251}
@@ -285,6 +297,22 @@ PrefabInstance:
     - target: {fileID: 3960840377507083770, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519805078344103680, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+      propertyPath: streamingAssetSearchPaths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519805078344103680, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+      propertyPath: streamingAssetSearchPaths.Array.data[0]
+      value: Assets/StreamingAssets/haptics
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519805078344103680, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+      propertyPath: OnSensationLibraryUpdated.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519805078344103680, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+      propertyPath: OnSensationLibraryUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -729,6 +757,18 @@ PrefabInstance:
     - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
       propertyPath: forceDisplayIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
+      propertyPath: onViewRendered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
+      propertyPath: onViewRendered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
+      propertyPath: onViewRendered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1425,6 +1465,114 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: checkBothHands
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: chiralityToCheck
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1364615530}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1364615530}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StopHaptic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 272980308}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1364615530}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayHaptic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HapticTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PoseActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Presence
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseLost.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: OnPoseDetected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090261040206381736, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
+      propertyPath: WhilePoseDetected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4917263542132110298, guid: ece6728f5b4b0ac4abb63714d801803f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

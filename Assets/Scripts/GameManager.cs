@@ -7,6 +7,7 @@ using HapE.Unity;
 public class GameManager : MonoBehaviour
 {
     public HapEDeviceManager hapticsDevice = null;
+    public HapticLibraryPlayer library =  null;
 
     [SerializeField] float rayLength = 20;
     GameObject currentObj;
@@ -17,14 +18,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            hapticsDevice.PlayHapEJSON(CombineJSONName("2-Dial"));
-        }
+        library = FindAnyObjectByType<HapticLibraryPlayer>();
     }
 
     public void ShootRaycast(Transform obj)
@@ -63,6 +57,16 @@ public class GameManager : MonoBehaviour
 
             lastObj = currentObj;
         }
+    }
+
+    public void PlayHaptic(string name = "Presence")
+    {
+        library.PlaySensationWithName(name);
+    }
+
+    public void StopHaptic()
+    {
+        library.ClearCurrentSensation();
     }
 
     string CombineJSONName(string name)
