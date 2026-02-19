@@ -2,14 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using HapE.Unity;
 
 public class GameManager : MonoBehaviour
 {
+    public HapEDeviceManager hapticsDevice = null;
+
     [SerializeField] float rayLength = 20;
     GameObject currentObj;
 
     [SerializeField] TMP_Text debugText;
     [SerializeField] GameObject lastObj;
+
+    private void Start()
+    {
+        hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            hapticsDevice.PlayHapEJSON(CombineJSONName("2-Dial"));
+        }
+    }
 
     public void ShootRaycast(Transform obj)
     {
@@ -47,5 +63,12 @@ public class GameManager : MonoBehaviour
 
             lastObj = currentObj;
         }
+    }
+
+    string CombineJSONName(string name)
+    {
+        string path = Application.streamingAssetsPath + "/haptics/" + name + ".json";
+
+        return path;
     }
 }

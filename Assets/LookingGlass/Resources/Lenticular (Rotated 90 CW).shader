@@ -23,9 +23,6 @@ Shader "LookingGlass/Lenticular (Rotated 90 CW)" {
             ZTest Always
 
             HLSLPROGRAM
-
-            #pragma multi_compile _ LKG_BILINEAR
-
             #pragma vertex vert
             #pragma fragment frag
             #pragma target 4.6
@@ -48,8 +45,6 @@ Shader "LookingGlass/Lenticular (Rotated 90 CW)" {
             //SEE: /docs/LKG Bridge Lenticular Shader Modifications.md
             //  For documentation on updating this lenticular shader.
 
-            #pragma multi_compile _ ANTI_ALIASING
-
             struct SubpixelCell {
                 float ROffsetX;
                 float ROffsetY;
@@ -71,8 +66,6 @@ Shader "LookingGlass/Lenticular (Rotated 90 CW)" {
             uniform float tileCount;                                    //NEW
             uniform float4 viewPortion;
             uniform float4 tile;
-            uniform float rawSlope;
-            uniform float rawPitch;
 
             //NOTE: Not used for now in Unity, since the camera should be oriented for determining what it's focusing on.
             // uniform float focus;                                        //NEW
@@ -97,19 +90,6 @@ Shader "LookingGlass/Lenticular (Rotated 90 CW)" {
             //EXTRA NOT found in LKG Bridge:
             uniform float4 aspect;
             uniform float verticalOffset; // just a dumb fix for macos in 2019.3
-
-            uniform float antiAliasingStrength;
-
-            float2 rotate(float2 uv, float angle) {
-                // float angle = atan2(-rawSlope, 1);
-                float cosAngle = cos(angle);
-                float sinAngle = sin(angle);
-
-                return float2(
-                    uv.x * cosAngle - uv.y * sinAngle,
-                    uv.x * sinAngle + uv.y * cosAngle
-                );
-            }
 
             int getCellForPixel(float2 screenUV) {
                 int xPos = int(screenUV.x * screenW);
@@ -221,15 +201,11 @@ Shader "LookingGlass/Lenticular (Rotated 90 CW)" {
                     float viewDir = views[channel] * 2.0 - 1.0;
 
                     //NOTE: See uniform NOTE above on the "focus" uniform
-                    float2 focusedUV = tileUV;
+                    // float2 focusedUV = tileUV;
                     // focusedUV.x += viewDir * focus;
 
-                    float2 quiltUV = getQuiltCoordinates(focusedUV, viewIndex);
-#ifdef LKG_BILINEAR
-                    color[channel] = tex2Dlod(_MainTex, float4(quiltUV, 0, 0))[channel];
-#else
+                    float2 quiltUV = getQuiltCoordinates(/*focusedUV*/ tileUV, viewIndex);
                     color[channel] = tex2D(_MainTex, quiltUV)[channel];
-#endif
                 }
 
                 return color;
@@ -414,71 +390,57 @@ Shader "LookingGlass/Lenticular (Rotated 90 CW)" {
 
             struct VertexOutput {
                 float4 vertex : SV_POSITION;
-                float2 uv : TEXCOORD0; //The unmodified UV0 channel.
-                float2 transformedUV : TEXCOORD1; //The UV0 channel that has been transformed by the texture transform matrix (in the vertex shader).
+                float2 uv : TEXCOORD0;
             };
-
-            uniform float4x4 textureTransform;
 
             VertexOutput vert(VertexInput v) {
                 VertexOutput o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = v.uv;
-                o.transformedUV = mul(textureTransform, float4(v.uv, 1, 1)).xy;
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
             fixed4 frag(VertexOutput i) : SV_Target {
-                // float2 screenUV = i.uv; //Position on the display exactly
-                // float2 tileUV = i.transformedUV; //Position on the quilt tile (contains aspect ratio fixes, translation, zoom, cropping)
+                // first handle aspect
+                // note: recreated this using step functions because my mac didn't like the conditionals
+                // if ((aspect.x > aspect.y) || (aspect.x < aspect.y))
+                //     viewUV.x *= aspect.x / aspect.y;
+                // else
+                //     viewUV.y *= aspect.y / aspect.x;
+                float2 viewUV = i.uv;
+                viewUV -= 0.5;
+                float modx = saturate(
+                    step(aspect.y, aspect.x) +
+                    step(aspect.x, aspect.y));
+                viewUV.x = modx * viewUV.x * aspect.x / aspect.y +
+                           (1.0 - modx) * viewUV.x;
+                viewUV.y = modx * viewUV.y +
+                           (1.0 - modx) * viewUV.y * aspect.y / aspect.x;
+                viewUV += 0.5;
+                clip(viewUV);
+                clip(-viewUV + 1.0);
 
                 //NOTE: ROTATE 90 CW:
                 //  1. Removed `slope *= -1`
                 //  2. Changed screenUV from i.uv to `float2(i.uv.y, 1 - i.uv.x)`
                 //  3. Changed tileUV from viewUV to `float2(1 - viewUV.y, viewUV.x)`
                 float2 screenUV = float2(1 - i.uv.y, i.uv.x);       //Position on the display exactly
-                float2 tileUV = float2(1 - i.transformedUV.y, i.transformedUV.x);     //Position on the quilt tile (contains aspect ratio fixes, translation, zoom, cropping)
+                float2 tileUV = float2(1 - viewUV.y, viewUV.x);     //Position on the quilt tile (contains aspect ratio fixes, translation, zoom, cropping)
 
                 // get the views for each subpixel
                 float3 views = getSubpixelViews(screenUV);
-                float4 outputColor = 0;
+                float4 outputColor = float4(0, 0, 0, 1);
 
                 // get the color for those views based on the filter mode
-                #if ANTI_ALIASING
-                    float aspect = screenW / screenH;
-                    float angle = atan2(-rawSlope, 1);
-                    float vpSize = float2(1 / rawPitch, 1 / rawPitch) * 0.5;
-                    for (int y = 0; y <= 1; y++) {
-                        for (int x = 0; x <= 1; x++) {
-                            float2 blur = float2(x, y) - 0.5;
-                            blur *= vpSize;
-                            blur = rotate(blur, angle);
-                            blur *= float2(1, aspect);
-                            blur *= antiAliasingStrength;
-
-                            if (filterMode == 0 || tileCount <= 1) {
-                                outputColor += getViewsColors(tileUV + blur, views);
-                            } else if (filterMode == 1) {
-                                outputColor += oldViewFiltering(tileUV + blur, views);
-                            } else if (filterMode == 2) {
-                                outputColor += gaussianViewFiltering(tileUV + blur, views);
-                            } else if (filterMode == 3) {
-                                outputColor += nrisViewFiltering(tileUV + blur, views, 10);
-                            }
-                        }
-                    }
-                    outputColor *= 0.25;
-                #else
-                    if (filterMode == 0 || tileCount <= 1) {
-                        outputColor = getViewsColors(tileUV, views);
-                    } else if (filterMode == 1) {
-                        outputColor = oldViewFiltering(tileUV, views);
-                    } else if (filterMode == 2) {
-                        outputColor = gaussianViewFiltering(tileUV, views);
-                    } else if (filterMode == 3) {
-                        outputColor = nrisViewFiltering(tileUV, views, 10);
-                    }
-                #endif
+                if (filterMode == 0 || tileCount <= 1) {
+                    outputColor = getViewsColors(tileUV, views);
+                } else if (filterMode == 1) {
+                    outputColor = oldViewFiltering(tileUV, views);
+                } else if (filterMode == 2) {
+                    outputColor = gaussianViewFiltering(tileUV, views);
+                } else if (filterMode == 3) {
+                    outputColor = nrisViewFiltering(tileUV, views, 10);
+                }
 
                 // dim the edges of view space to fade for displays without privacy filter
                 if (filterEdge == 1) {

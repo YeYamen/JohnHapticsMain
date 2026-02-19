@@ -1,5 +1,5 @@
 # The LookingGlass Unity Plugin
-v3.2.8
+v3.2.0
 
 ## Docs & Examples
 Please visit the [Looking Glass docs site](https://docs.lookingglassfactory.com/developer-tools/unity) for explanations of how everything works.

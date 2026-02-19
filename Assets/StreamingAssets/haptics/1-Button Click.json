@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 127.323,
+    "A": 0.015,
+    "B": 0.015,
+    "a": 1.0,
+    "b": 1.0
+  },
+  "animator": {
+    "enabled": false
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 0.0,
+        "t": 0.0192227457
+      },
+      {
+        "intensity": 0.9863885,
+        "t": 0.08192344
+      },
+      {
+        "intensity": 0.09094763,
+        "t": 0.09885382
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 4,
+    "repeat_count": 1
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.02
+      },
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z_rotation": 0.0,
+        "x_scale": 2.0,
+        "y_scale": 2.0,
+        "t": 0.18
+      },
+      {
+        "x": 0.0,
+        "y": -0.000277769577,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 3,
+    "repeat_count": 1
+  },
+  "hapticName": "Button Click",
+  "brushName": "Circle"
+}

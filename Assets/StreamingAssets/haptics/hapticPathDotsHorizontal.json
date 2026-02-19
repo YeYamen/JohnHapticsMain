@@ -1,0 +1,217 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 135.1877,
+    "A": 0.009418309,
+    "B": 0.009418309,
+    "a": 1.0,
+    "b": 1.0,
+    "max_t": 6.28318548,
+    "d": 1.57079637,
+    "k": 0.0
+  },
+  "animator": {
+    "enabled": false,
+    "T1a1_switch_count": 0,
+    "T1a2_switch_count": 0
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 0.0,
+        "t": 7.500001E-05
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.4499251
+      },
+      {
+        "intensity": 1.0,
+        "t": 7.498264E-05
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.149925053
+      },
+      {
+        "intensity": 0.0,
+        "t": 7.498264E-05
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.449925065
+      },
+      {
+        "intensity": 1.0,
+        "t": 7.510185E-05
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.149925
+      },
+      {
+        "intensity": 0.0,
+        "t": 7.498264E-05
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.4499253
+      },
+      {
+        "intensity": 1.0,
+        "t": 7.47442245E-05
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.149925113
+      },
+      {
+        "intensity": 0.0,
+        "t": 7.498264E-05
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.449924827
+      },
+      {
+        "intensity": 1.0,
+        "t": 7.510185E-05
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.149924755
+      },
+      {
+        "intensity": 0.0,
+        "t": 7.510185E-05
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.449925184
+      },
+      {
+        "intensity": 1.0,
+        "t": 7.48634338E-05
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.149924755
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 21,
+    "repeat_count": 0
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": -0.05,
+        "y": -0.0193000082,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.45
+      },
+      {
+        "x": -0.05,
+        "y": -0.0193000082,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.149999976
+      },
+      {
+        "x": -0.0210000034,
+        "y": -0.02030002,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.45
+      },
+      {
+        "x": -0.0210000034,
+        "y": -0.02030002,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.1500001
+      },
+      {
+        "x": 0.004333341,
+        "y": -0.0209666677,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.450000048
+      },
+      {
+        "x": 0.004333341,
+        "y": -0.0209666677,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.149999976
+      },
+      {
+        "x": 0.0293333419,
+        "y": -0.0213000122,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.450000167
+      },
+      {
+        "x": 0.02833332,
+        "y": -0.0213000122,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.149999857
+      },
+      {
+        "x": 0.0520000122,
+        "y": -0.0253000017,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.4500003
+      },
+      {
+        "x": 0.0520000122,
+        "y": -0.0253000017,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.149999619
+      },
+      {
+        "x": 0.0520000122,
+        "y": -0.0253000017,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 11,
+    "repeat_count": 0
+  },
+  "fixation_mode": 0,
+  "fixation_offset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "hapticName": "Warning",
+  "brushName": "Circle"
+}

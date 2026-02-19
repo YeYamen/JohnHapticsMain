@@ -65,12 +65,6 @@ namespace LookingGlass {
             steps.Add(step);
         }
 
-        public void Insert(int index, RenderStep step) {
-            if (step == null)
-                throw new ArgumentNullException(nameof(step));
-            steps.Insert(index, step);
-        }
-
         public bool Remove(RenderStep step) => steps.Remove(step);
         public void RemoveAt(int index) => steps.RemoveAt(index);
 
@@ -94,7 +88,6 @@ namespace LookingGlass {
                 quiltMix = new RenderTexture(quiltSettings.quiltWidth, quiltSettings.quiltHeight, 0, quilt.graphicsFormat);
                 quiltMix.name = "Quilt Mix (" + quiltSettings.quiltWidth + "x" + quiltSettings.quiltHeight + ")";
                 quiltMix.filterMode = unityFilterMode;
-                QuiltMix.depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.D16_UNorm;
                 try {
                     onQuiltChanged?.Invoke();
                 } catch (Exception e) {

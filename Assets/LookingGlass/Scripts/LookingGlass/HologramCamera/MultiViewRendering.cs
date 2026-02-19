@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using LookingGlass.Toolkit;
-using LookingGlass.Mobile;
-
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -394,7 +392,7 @@ namespace LookingGlass {
             data.onViewRender?.Invoke(viewIndex);
 
             viewRT = RenderTexture.GetTemporary(data.quiltSettings.TileWidth, data.quiltSettings.TileHeight, 24, data.quilt.graphicsFormat);
-
+            
             //IMPORTANT: The single-view camera MUST clear before each render
             //TODO: Not sure how to fix Depthiness != 1 case of the background not clearing properly with Skybox clear flags...
             try {
@@ -503,7 +501,7 @@ namespace LookingGlass {
                     rect.y -= quiltSettings.TileHeight;                                         //NOTE: This flips where we're starting from, from the bottom-left of the quilt tile originally, to now the top-left of the quilt tile.
                 }
             }
-
+            
             return rect;
         }
 
@@ -658,12 +656,8 @@ namespace LookingGlass {
         }
 
         internal static RenderTexture RenderPreview2D(HologramCamera hologramCamera, bool ignorePostProcessing = false) {
-            if (hologramCamera == null || !hologramCamera.Initialized) {
-                Debug.LogError("The camera must be non-null and finished initializing before it can render.");
-                if (hologramCamera == null)
-                    return null;
-                return hologramCamera.Preview2DRT;
-            }
+            if (hologramCamera == null || !hologramCamera.Initialized)
+                throw new ArgumentException("The camera must be finished initializing before it can render.", nameof(hologramCamera));
             Profiler.BeginSample(nameof(RenderPreview2D), hologramCamera);
             try {
                 Profiler.BeginSample("Create " + nameof(RenderTexture) + "s", hologramCamera);
@@ -907,14 +901,6 @@ namespace LookingGlass {
             Calibration cal = camera.Calibration;
             QuiltSettings quiltSettings = camera.QuiltSettings;
             ScreenRect lenticularRegion = camera.LenticularRegion;
-
-            // set to use tex2dlod if we have bilinear filtering on
-            if (camera.renderStack.filterMode == QuiltFilterMode.Bilinear) {
-                material.EnableKeyword("LKG_BILINEAR");
-            } else {
-                material.DisableKeyword("LKG_BILINEAR");
-            }
-
             SetLenticularMaterialSettings(material, cal, quiltSettings, lenticularRegion,
                 ref camera.subpixelCellBuffer, ref camera.normalizedSubpixelCells,
                 camera.RenderStack.FilterMode.UsesLenticularAA(), camera.RenderStack.AntiAliasingStrength,
@@ -1042,29 +1028,13 @@ namespace LookingGlass {
 
             Vector3 offset = new Vector3(0, 0, 0);
             Vector3 scale = new Vector3(1, 1, 1);
-
-            // rotate 90?
-            if (cal.GetDeviceType() == LKGDeviceType._16inPortraitGen3
-                || cal.GetDeviceType() == LKGDeviceType._27inPortraitGen3)
-            {
-                if (textureAspect > displayAspect) {
-                    scale.x = textureAspect / displayAspect;
-                    offset.x = (1 - scale.x) / 2;
-                } else if (textureAspect < displayAspect) {
-                    scale.y = displayAspect / textureAspect;
-                    offset.y = (1 - scale.y) / 2;
-                }
+            if (textureAspect > displayAspect) {
+                scale.y = textureAspect / displayAspect;
+                offset.y = (1 - scale.y) / 2;
+            } else if (textureAspect < displayAspect) {
+                scale.x = displayAspect / textureAspect;
+                offset.x = (1 - scale.x) / 2;
             }
-            else {
-                if (textureAspect > displayAspect) {
-                    scale.y = textureAspect / displayAspect;
-                    offset.y = (1 - scale.y) / 2;
-                } else if (textureAspect < displayAspect) {
-                    scale.x = displayAspect / textureAspect;
-                    offset.x = (1 - scale.x) / 2;
-                }
-            }
-
             textureTransform = Matrix4x4.Scale(scale) * textureTransform;
             textureTransform = Matrix4x4.Translate(offset) * textureTransform;
             material.SetMatrix(lenticularProperties.textureTransform, textureTransform);

@@ -41,10 +41,8 @@ namespace LookingGlass {
         private static readonly QuiltRecordingSettings[] PresetSettings = new QuiltRecordingSettings[] {
             new QuiltRecordingSettings(FFmpegPreset.VP8Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType.GoPortrait)),
             new QuiltRecordingSettings(FFmpegPreset.VP8Default, 30, 20, 60, new QuiltCaptureOverrideSettings(LKGDeviceType.PortraitGen2)),
-            new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType._16inLandscapeGen3)),
-            new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType._16inPortraitGen3)),
-            new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType._27inLandscapeGen3)),
-            new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType._27inPortraitGen3)),
+            new QuiltRecordingSettings(FFmpegPreset.VP8Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType._16inLandscapeGen3)),
+            new QuiltRecordingSettings(FFmpegPreset.VP8Default, 30, 20, 90, new QuiltCaptureOverrideSettings(LKGDeviceType._16inPortraitGen3)),
             new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 150, new QuiltCaptureOverrideSettings(LKGDeviceType._32inLandscapeGen3)),
             new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 150, new QuiltCaptureOverrideSettings(LKGDeviceType._32inPortraitGen3)),
             new QuiltRecordingSettings(FFmpegPreset.VP9Default, 30, 20, 150, new QuiltCaptureOverrideSettings(LKGDeviceType._65inLandscapeGen2)),

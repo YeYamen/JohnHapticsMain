@@ -191,8 +191,6 @@ namespace LookingGlass {
                 filterMode = FilterMode.Point,
             };
 
-            singleViewTexture.depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.D16_UNorm;
-
             singleViewTexture.name = "Hologram";
             singleViewTexture.enableRandomWrite = true;
             singleViewTexture.Create();
@@ -310,7 +308,7 @@ namespace LookingGlass {
                 return false;
 
             lastFrameRendered = t;
-            if (hologramCamera != null && hologramCamera.isActiveAndEnabled && hologramCamera.Initialized) {
+            if (hologramCamera != null && hologramCamera.isActiveAndEnabled) {
                 hologramCamera.RenderQuilt();
                 MultiViewRendering.CopyViewFromQuilt(quiltSettings, viewIndex, sourceQuilt, singleViewTexture, true);
             } else {
@@ -340,7 +338,6 @@ namespace LookingGlass {
 
             float aspect = quiltSettings.renderAspect;
             previewTexture = new RenderTexture((int) (quiltSettings.TileHeight * aspect), quiltSettings.TileHeight, 0);
-            previewTexture.depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.D16_UNorm;
             previewTexture.name = "Hologram Preview";
             previewCamera.targetTexture = previewTexture;
 

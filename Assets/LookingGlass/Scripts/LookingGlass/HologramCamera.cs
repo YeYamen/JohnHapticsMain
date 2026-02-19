@@ -205,10 +205,7 @@ namespace LookingGlass {
         [Tooltip("Should post-processing be enabled after rendering the quilt?\n\n" +
             "This only effects URP.")]
         [SerializeField] internal bool urpPostProcessing = true;
-//#if UNITY_6000_0_OR_NEWER
-        [Tooltip("urp renderer\n\n" + "This only effects URP.")]
-        [SerializeField] internal int urpScriptableRenderer = 0;
-//#endif
+
         [Tooltip("The realtime quilt rendered by this Holoplay capture.")]
         [SerializeField] internal RenderTexture quiltTexture;
 
@@ -340,7 +337,7 @@ namespace LookingGlass {
             set {
                 targetDisplay = value;
                 if (finalScreenCamera != null)
-                    finalScreenCamera.targetDisplay = (int)targetDisplay;
+                    finalScreenCamera.targetDisplay = (int) targetDisplay;
                 onTargetDisplayChanged?.Invoke();
             }
         }
@@ -441,7 +438,18 @@ namespace LookingGlass {
             }
         }
 
-        public bool Initialized => initialized;
+        public bool Initialized {
+            get { return initialized; }
+            set {
+                initialized = value;
+                if (initialized) {
+                    onAnyInitialized?.Invoke(this);
+                    initializationTcs.TrySetResult(true);
+                } else {
+                    initializationTcs = new();
+                }
+            }
+        }
         public Task WaitForInitialization() => initializationTcs.Task;
 
         //How the cameras work:
@@ -614,8 +622,7 @@ namespace LookingGlass {
 
         private void OnDisable() {
             initializationStarted = false;
-            initialized = false;
-            initializationTcs = new();
+            Initialized = false;
             debugging.onShowAllObjectsChanged -= SetAllObjectHideFlags;
 
             UnregisterFromList(this);
@@ -778,11 +785,7 @@ namespace LookingGlass {
                 debugging.onShowAllObjectsChanged -= SetAllObjectHideFlags;
                 debugging.onShowAllObjectsChanged += SetAllObjectHideFlags;
 
-                initialized = true;
-                renderStack.RenderToQuilt(this);
-
-                onAnyInitialized?.Invoke(this);
-                initializationTcs.TrySetResult(true);
+                Initialized = true;
             } catch (Exception e) {
                 Debug.LogError("Failed to fully initialize " + this + "!");
                 Debug.LogException(e);
@@ -852,6 +855,7 @@ namespace LookingGlass {
         private void SetupRenderer() {
             MultiViewRenderer.Next = this;
             renderer = finalScreenCamera.gameObject.AddComponent<MultiViewRenderer>();
+            renderStack.RenderToQuilt(this);
         }
 
         internal void InitSections() {
@@ -931,9 +935,7 @@ namespace LookingGlass {
             singleViewCamera = new GameObject(SingleViewCameraName).AddComponent<Camera>();
             singleViewCamera.transform.SetParent(transform, false);
             singleViewCamera.enabled = false;
-#if !HAS_URP
             singleViewCamera.stereoTargetEye = StereoTargetEyeMask.None; //NOTE: This is needed for better XR support
-#endif
             SetHideFlagsOnObject(singleViewCamera);
 
             if (UsePostProcessing?.Invoke(this) ?? false) {
@@ -961,10 +963,8 @@ namespace LookingGlass {
             finalScreenCamera.allowMSAA = false;
             finalScreenCamera.cullingMask = 0;
             finalScreenCamera.clearFlags = CameraClearFlags.Nothing;
-            finalScreenCamera.targetDisplay = (int)targetDisplay;
-#if !HAS_URP
+            finalScreenCamera.targetDisplay = (int) targetDisplay;
             finalScreenCamera.stereoTargetEye = StereoTargetEyeMask.None;
-#endif
             SetHideFlagsOnObject(finalScreenCamera);
         }
 
@@ -1074,17 +1074,11 @@ namespace LookingGlass {
                 singleViewCamera.projectionMatrix = centerProjMatrix;
 
 #if HAS_URP
-                if (RenderPipelineUtil.IsURP) {
+                if (RenderPipelineUtil.IsURP)
                     singleViewCamera.GetUniversalAdditionalCameraData().renderPostProcessing = urpPostProcessing;
-
-//#if UNITY_6000_0_OR_NEWER
-                    singleViewCamera.GetUniversalAdditionalCameraData().SetRenderer(urpScriptableRenderer);
-//#endif
-                }
-
 #endif
-                }
             }
+        }
 
         public void UpdateLenticularMaterial() => MultiViewRendering.SetLenticularMaterialSettings(this, LenticularMaterial);
 
@@ -1120,7 +1114,6 @@ namespace LookingGlass {
                 rect.top = lkgDisplay.hardwareInfo.windowCoordY;
                 rect.right = rect.left + lkgDisplay.calibration.screenW;
                 rect.bottom = rect.top + lkgDisplay.calibration.screenH;
-                //Debug.Log("rect of lkg display " + rect);
             } else {
                 if (emulatedDeviceTemplate != null) {
                     //REVIEW: [CRT-4039] Does this work as (and when) intended?
@@ -1306,9 +1299,8 @@ namespace LookingGlass {
             }
 
             quiltTextureOriginalFormatUsed = GetQuiltFormat();
-            int depthBits = (RenderPipelineUtil.IsURP) ? 32 : 0; //TODO: Why does URP in newer versions (like in Unity 6) suddenly require depth bits now? Aren't we NOT rendering directly from the camera to the quilt? (We're rendering directly to single-view textures, then blitting copies into the quilt view-by-view...)
             if (quiltSettings.quiltWidth >= QuiltSettings.MinSize && quiltSettings.quiltHeight >= QuiltSettings.MinSize) {
-                quilt = new RenderTexture(quiltSettings.quiltWidth, quiltSettings.quiltHeight, depthBits, quiltTextureOriginalFormatUsed) {
+                quilt = new RenderTexture(quiltSettings.quiltWidth, quiltSettings.quiltHeight, 0, quiltTextureOriginalFormatUsed) {
                     filterMode = FilterMode.Point,
                     hideFlags = (useQuiltAsset) ? HideFlags.None : HideFlags.DontSave
                 };
@@ -1330,8 +1322,8 @@ namespace LookingGlass {
 
             //Pass some stuff globally for post-processing
             Shader.SetGlobalVector("hp_quiltViewSize", new Vector4(
-                (quiltSettings.quiltWidth >= QuiltSettings.MinSize) ? (float)quiltSettings.TileWidth / quiltSettings.quiltWidth : 0,
-                (quiltSettings.quiltHeight >= QuiltSettings.MinSize) ? (float)quiltSettings.TileHeight / quiltSettings.quiltHeight : 0,
+                (quiltSettings.quiltWidth >= QuiltSettings.MinSize) ? (float) quiltSettings.TileWidth / quiltSettings.quiltWidth : 0,
+                (quiltSettings.quiltHeight >= QuiltSettings.MinSize) ? (float) quiltSettings.TileHeight / quiltSettings.quiltHeight : 0,
                 quiltSettings.TileWidth,
                 quiltSettings.TileHeight
             ));

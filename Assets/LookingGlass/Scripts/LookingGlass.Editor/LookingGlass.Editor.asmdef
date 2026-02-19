@@ -3,8 +3,7 @@
     "rootNamespace": "",
     "references": [
         "LookingGlass",
-        "FFmpegOut",
-        "Unity.RenderPipelines.Universal.Runtime"
+        "FFmpegOut"
     ],
     "includePlatforms": [
         "Editor"

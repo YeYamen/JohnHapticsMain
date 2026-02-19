@@ -30,12 +30,12 @@ namespace LookingGlass.Mobile {
         [Tooltip("The amount of pixels in width you'd like the main display's window to render at (on your mobile device's built-in display).\n" +
             "This can be less than your mobile device's native resolution width.\n\n" +
             "Set to 0 to use the native resolution width of the iOS device.")]
-        private int width2D = 600;
+        [SerializeField] private int width2D = 600;
 
         [Tooltip("The amount of pixels in height you'd like the main display's window to render at (on your mobile device's built-in display).\n" +
             "This can be less than your mobile device's native resolution height.\n\n" +
             "Set to 0 to use the native resolution height of the iOS device.")]
-        private int height2D = 1000;
+        [SerializeField] private int height2D = 1000;
 
         private string loadedVisualJsonPath = "";
 
@@ -54,37 +54,20 @@ namespace LookingGlass.Mobile {
 
         public static event UnityAction<Calibration> onCalibrationLoaded;
 
-        private void OnValidate() {
-            if (camera == null)
-                Reset();
-        }
-
 
         private void Reset() {
             //TODO: I wonder if we can get a callback like this Reset() message,
             //  But ALSO for when we (the user) drags the MobileDMAController prefab
             //  from their Project view into the scene?
             camera = HologramCamera.Instance;
-
-            if (camera != null)
-                camera.targetDisplay = 
-#if UNITY_EDITOR
-                    HologramCamera.DisplayTarget.Display2;
-#else
-                    HologramCamera.DisplayTarget.Display1;
-#endif
-
         }
 
         private void Start() {
             Display[] displays = Display.displays;
             Display main = displays[0];
-            width2D = main.systemWidth;
-            height2D = main.systemHeight;
-            Set2DScreenResolution(width2D, height2D);
-
-            Reset();
-
+            int w = (width2D <= 0) ? main.systemWidth : width2D;
+            int h = (height2D <= 0) ? main.systemHeight : height2D;
+            Set2DScreenResolution(w, h);
 #if !UNITY_EDITOR
             if (camera != null)
                 camera.gameObject.SetActive(displays.Length == 2);
@@ -155,8 +138,7 @@ namespace LookingGlass.Mobile {
             await camera.WaitForInitialization();
 
             Calibration cal = camera.Calibration;
-            LKGDeviceType deviceType = cal.GetDeviceType();
-            if (deviceType == LKGDeviceType._16inPortraitGen3 || deviceType == LKGDeviceType._27inPortraitGen3) {
+            if (cal.GetDeviceType() == LKGDeviceType._16inPortraitGen3) {
                 Debug.Log("[" + nameof(MobileDMAController) + "] Determined that the lenticular output to the display should be rotated!");
                 Shader rotatedLenticular = Util.FindShader("LookingGlass/Lenticular (Rotated 90 CW)");
                 if (rotatedLenticular != null) {

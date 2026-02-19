@@ -145,7 +145,7 @@ namespace LookingGlass.Editor {
 
         private static List<WindowsOSMonitor> monitors;
         private static bool supportsExperimentalDisplayDPIScaling =
-#if UNITY_EDITOR_WIN && !UNITY_6000_0_OR_NEWER
+#if UNITY_EDITOR_WIN
             true
 #else
             false
@@ -224,6 +224,7 @@ namespace LookingGlass.Editor {
 
             if (frameCount >= 5) {
                 InitializeWithHologramCamera();
+                UpdateFromResolutionIfNeeded();
             }
 
             return gameView;
@@ -282,6 +283,7 @@ namespace LookingGlass.Editor {
                     lastPos = position;
                     try {
                         InitializeWithHologramCamera();
+                        UpdateFromResolutionIfNeeded();
                     } catch (Exception e) {
                         Debug.LogError("An error occurred while updating the preview window! It will be closed.");
                         Debug.LogException(e);
@@ -310,6 +312,7 @@ namespace LookingGlass.Editor {
 
         private Rect CalculateIdealPosition() {
             RectInt unscaledRect;
+            RectInt scaledRect;
             bool useManualPreview = Preview.UseManualPreview;
             Calibration cal = hologramCamera.Calibration;
             ScreenRect screenRect = hologramCamera.DisplayRect;
@@ -320,8 +323,6 @@ namespace LookingGlass.Editor {
             } else {
                 unscaledRect = new RectInt(screenRect.left, screenRect.top, screenRect.Width, screenRect.Height);
             }
-
-            RectInt scaledRect;
 
             int indexInList = -1;
             if (!useManualPreview && supportsExperimentalDisplayDPIScaling) {
@@ -351,7 +352,6 @@ namespace LookingGlass.Editor {
             //After a few frames, we need to re-check to see what Unity allowed our position rect to be!
             //It will automatically resize to avoid going outside the screen, or overlapping the Windows taskbar.
             Rect idealRect = new Rect(scaledRect.position, scaledRect.size);
-
             return idealRect;
         }
         private void InitializeWithHologramCamera() {
@@ -381,38 +381,10 @@ namespace LookingGlass.Editor {
 
             gameView.SetFreeAspectSize();
 
-#if UNITY_EDITOR_OSX
-            gameView.SetShowToolbar(true);
-#endif
-
-
-#if UNITY_EDITOR_WIN && UNITY_6000_0_OR_NEWER
-            // only for Unity6 on Windows, we need to force the window to be truely fullscreen
-            EditorUpdates.Delay(6, () => ForceBorderlessWindow(idealRect));
-#else
-            UpdateFromResolutionIfNeeded();
-#endif
-        }
-
-        private void ForceBorderlessWindow(Rect idealRect) {
-#if UNITY_EDITOR_WIN
-            IEnumerable<IntPtr> windowPtrs = UnityBuildWindowUtil.GetGameViewWindowPtrs();
-            if (windowPtrs.Any()) // Check if there are any IntPtr values
-            {
-                foreach (IntPtr intPtr in windowPtrs) {
-                    WindowsOSWindow window = new WindowsOSWindow(intPtr);
-
-                    // Process the valid IntPtr values
-                    window.SetBorderlessWindow((int)idealRect.x, (int)idealRect.y, (int)idealRect.width, (int)idealRect.height);
-
-                }
-
-            } else {
-                // Handle the case where the return is empty
-                Debug.Log("No game view window pointers found.");
-            }
-#endif
-            UpdateFromResolutionIfNeeded();
+            //WARNING: Our code didn't seem to be properly handling this.
+            //While hiding the unnecessary toolbar was visually desirable,
+            //This was causing preview window centerOffset / view-jumping issues on LKG devices.
+            //gameView.SetShowToolbar(false);
         }
 
         private void UpdateFromResolutionIfNeeded() {
@@ -448,31 +420,12 @@ namespace LookingGlass.Editor {
                     bottom = unscaledPos.y + unscaledSize.y
                 };
             } else {
-                region = new ScreenRect()
-                {
-                    left = (int)position.x,
-                    top = (int)position.y,
-                    right = (int)position.x + (int)area.x,
-                    bottom = (int)position.y + (int)area.y
+                region = new ScreenRect() {
+                    left = (int) position.x,
+                    top = (int) position.y,
+                    right = (int) position.x + (int) area.x,
+                    bottom = (int) position.y + (int) area.y
                 };
-
-                // override region only for M1 Mac and Unity6+
-#if UNITY_6000_0_OR_NEWER && UNITY_EDITOR_OSX
-                //Debug.Log($"area {area} region {region}");
-                string processorType = SystemInfo.processorType;
-                if (area.x >= 2 * cal.screenW || area.y >= 2 * cal.screenH)
-                {
-                    //Debug.Log("the area is wrong so we use cal's res instead");
-                    // The area on Mac is 2x the resolution so we hardcoded it to cal's screen W and H
-                    region = new ScreenRect()
-                    {
-                        left = (int)position.x,
-                        top = 71,// hard-coded the top area for Mac M1
-                        right = (int)position.x + (int)cal.screenW,
-                        bottom = (int)position.y + (int)cal.screenH
-                    };
-                }
-#endif
             }
 
             if (!setCustomRenderSize && !region.Equals(hologramCamera.LenticularRegion)) {

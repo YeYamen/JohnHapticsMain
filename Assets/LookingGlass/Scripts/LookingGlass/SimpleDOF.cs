@@ -6,8 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LookingGlass.Toolkit;
-using static UnityEngine.GraphicsBuffer;
-using UnityEditor;
 
 namespace LookingGlass {
     [ExecuteAlways]
@@ -19,8 +17,8 @@ namespace LookingGlass {
         [Header("DoF Curve")]
         [SerializeField] private float start = -1.5f;
         [SerializeField] private float dip = -0.5f;
-        [SerializeField] private float rise = 0.5f;
-        [SerializeField] private float end = 2;
+        [SerializeField] private float rise =  0.5f;
+        [SerializeField] private float end =  2;
 
         [Header("Blur")]
         [Range(0, 2)]
@@ -36,7 +34,7 @@ namespace LookingGlass {
             if (!TryEnsureCameraExists())
                 return;
             passdepthMaterial = new Material(Shader.Find("LookingGlass/DOF/Pass Depth"));
-            boxBlurMaterial = new Material(Shader.Find("LookingGlass/DOF/Box Blur"));
+            boxBlurMaterial   = new Material(Shader.Find("LookingGlass/DOF/Box Blur"));
             finalpassMaterial = new Material(Shader.Find("LookingGlass/DOF/Final Pass"));
         }
 
@@ -89,9 +87,9 @@ namespace LookingGlass {
             RenderTexture blur3 = RenderTexture.GetTemporary(src.width / 4, src.height / 4, 0);
 
             Shader.SetGlobalVector("ProjParams", new Vector4(
-                1,
-                camera.SingleViewCamera.nearClipPlane,
-                camera.SingleViewCamera.farClipPlane,
+                1, 
+                camera.SingleViewCamera.nearClipPlane, 
+                camera.SingleViewCamera.farClipPlane, 
                 1
             ));
 
@@ -142,93 +140,5 @@ namespace LookingGlass {
             RenderTexture.ReleaseTemporary(blur2);
             RenderTexture.ReleaseTemporary(blur3);
         }
-
-#if UNITY_EDITOR
-        [CustomEditor(typeof(SimpleDOF))]
-        public class SimpleDOFEditor : Editor {
-            private void OnSceneGUI() {
-                SimpleDOF dof = (SimpleDOF)target;
-                if (dof.camera == null || !dof.enabled) return;
-
-                Transform camTransform = dof.camera.transform;
-                float size = dof.camera.CameraProperties.Size;
-                Vector3 forward = camTransform.forward;
-                Vector3 camPos = camTransform.position;
-
-                Undo.RecordObject(dof, "Adjust DoF Curve");
-
-                // Calculate initial world-space positions
-                Vector3 startPos = camPos + forward * (dof.start * size);
-                Vector3 dipPos = camPos + forward * (dof.dip * size);
-                Vector3 risePos = camPos + forward * (dof.rise * size);
-                Vector3 endPos = camPos + forward * (dof.end * size);
-
-                // Draw controllable handles with constraints
-                EditorGUI.BeginChangeCheck();
-                startPos = DrawSingleAxisHandle(dof, startPos, forward, Color.red, Vector3.negativeInfinity, dipPos);
-                dipPos = DrawSingleAxisHandle(dof, dipPos, forward, Color.green, startPos, risePos);
-                risePos = DrawSingleAxisHandle(dof, risePos, forward, Color.yellow, dipPos, endPos);
-                endPos = DrawSingleAxisHandle(dof, endPos, forward, Color.blue, risePos, Vector3.positiveInfinity);
-
-                if (EditorGUI.EndChangeCheck()) {
-                    // Update values based on new positions
-                    dof.start = Vector3.Dot(startPos - camPos, forward) / size;
-                    dof.dip = Vector3.Dot(dipPos - camPos, forward) / size;
-                    dof.rise = Vector3.Dot(risePos - camPos, forward) / size;
-                    dof.end = Vector3.Dot(endPos - camPos, forward) / size;
-
-                    EditorUtility.SetDirty(dof);
-                }
-
-                // Draw planes for visualization
-                DrawPlaneAtPosition(startPos, forward, Color.red);
-                DrawPlaneAtPosition(dipPos, forward, Color.green);
-                DrawPlaneAtPosition(risePos, forward, Color.yellow);
-                DrawPlaneAtPosition(endPos, forward, Color.blue);
-            }
-
-            private Vector3 DrawSingleAxisHandle(SimpleDOF dof, Vector3 position, Vector3 forward, Color color, Vector3 minBound, Vector3 maxBound) {
-                Handles.color = color;
-                Quaternion rotation = Quaternion.LookRotation(forward);
-                float handleSize = HandleUtility.GetHandleSize(position) * 0.5f;
-
-                // Draw only the forward axis arrow
-                Handles.ArrowHandleCap(0, position, rotation, handleSize, EventType.Repaint);
-
-                // Constrain movement between minBound and maxBound along forward axis
-                Vector3 newPos = Handles.Slider(position, forward, handleSize, Handles.ArrowHandleCap, 0.1f);
-                float newDist = Vector3.Dot(newPos - dof.camera.transform.position, forward);
-                float minDist = Vector3.Dot(minBound - dof.camera.transform.position, forward);
-                float maxDist = Vector3.Dot(maxBound - dof.camera.transform.position, forward);
-
-                // Clamp the position to stay within bounds
-                newDist = Mathf.Clamp(newDist, minDist, maxDist);
-                newPos = dof.camera.transform.position + forward * newDist;
-
-                return newPos;
-            }
-
-            private void DrawPlaneAtPosition(Vector3 position, Vector3 normal, Color color) {
-                Handles.color = color;
-                Vector3 v = Vector3.Cross(normal, Vector3.up).normalized;
-                if (v.sqrMagnitude < 0.01f) v = Vector3.Cross(normal, Vector3.right).normalized;
-                Vector3 u = Vector3.Cross(v, normal).normalized;
-
-                float scale = 2f;
-                Vector3 p0 = position - v * scale - u * scale;
-                Vector3 p1 = position + v * scale - u * scale;
-                Vector3 p2 = position + v * scale + u * scale;
-                Vector3 p3 = position - v * scale + u * scale;
-
-                Handles.DrawLine(p0, p1);
-                Handles.DrawLine(p1, p2);
-                Handles.DrawLine(p2, p3);
-                Handles.DrawLine(p3, p0);
-            }
-        }
-#endif
     }
-
-
-
 }

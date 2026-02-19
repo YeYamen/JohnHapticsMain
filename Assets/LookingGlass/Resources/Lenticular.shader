@@ -23,9 +23,6 @@ Shader "LookingGlass/Lenticular" {
             ZTest Always
 
             HLSLPROGRAM
-
-            #pragma multi_compile _ LKG_BILINEAR
-
             #pragma vertex vert
             #pragma fragment frag
             #pragma target 4.6
@@ -225,11 +222,7 @@ Shader "LookingGlass/Lenticular" {
                     // focusedUV.x += viewDir * focus;
 
                     float2 quiltUV = getQuiltCoordinates(focusedUV, viewIndex);
-#ifdef LKG_BILINEAR
-                    color[channel] = tex2Dlod(_MainTex, float4(quiltUV, 0, 0))[channel];
-#else
                     color[channel] = tex2D(_MainTex, quiltUV)[channel];
-#endif
                 }
 
                 return color;
