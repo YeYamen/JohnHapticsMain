@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class SoundPlayer : MonoBehaviour
 {
+    #region Variables
     [SerializeField] AudioSource source;
     private float startVolume;
 
     [SerializeField] float fadeTime;
 
+    #endregion
     private void Start()
     {
         source = GetComponent<AudioSource>();
         startVolume = source.volume;
     }
 
+    #region Activating audio functions
     public void PlayTheSound(AudioClip soundClip)
     {
         source.volume = startVolume;
@@ -27,6 +30,7 @@ public class SoundPlayer : MonoBehaviour
     {
         StartCoroutine(FadeOut(source, fadeTime));
     }
+    #endregion
 
     #region Fade Couroutines
     public static IEnumerator FadeOut(AudioSource audioSource, float duration)

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PoseActions : MonoBehaviour
 {
-
-    [SerializeField] LineRenderer leftLaser;
-    [SerializeField] ParticleSystem rightSmoke;
     [SerializeField] SphereCollider rightHandDetection;
 
     private Collider rightCol;
@@ -17,32 +14,32 @@ public class PoseActions : MonoBehaviour
         rightCol = rightHandDetection.GetComponent<SphereCollider>();
     }
 
-    public void EnableLaser()
+    public void EnableLaser(LineRenderer laser)
     {
-        leftLaser.enabled = true;
+        laser.enabled = true;
     }
 
-    public void DisableLaser()
+    public void DisableLaser(LineRenderer laser)
     {
-        leftLaser.enabled = false;
+        laser.enabled = false;
     }
 
-    public void OpenHand()
+    public void PlaySmoke(ParticleSystem smoke)
     {
         if (isColliding)
         {
-            rightSmoke.Play();
+            smoke.Play();
         }
         else
         {
-            rightSmoke.Stop();
+            smoke.Stop();
         }
         
     }
 
-    public void CloseHand()
+    public void StopSmoke(ParticleSystem smoke)
     {
-        rightSmoke.Stop();
+        smoke.Stop();
     }
 
     private void OnTriggerEnter(Collider other)

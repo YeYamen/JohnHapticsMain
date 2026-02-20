@@ -6,6 +6,8 @@ using HapE.Unity;
 
 public class GameManager : MonoBehaviour
 {
+    #region Variables
+
     public HapEDeviceManager hapticsDevice = null;
     public HapticLibraryPlayer library =  null;
 
@@ -15,12 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text debugText;
     [SerializeField] GameObject lastObj;
 
+    #endregion
+
     private void Start()
     {
         hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
         library = FindAnyObjectByType<HapticLibraryPlayer>();
     }
 
+    #region Detection
     public void ShootRaycast(Transform obj)
     {
         RaycastHit hit;
@@ -40,7 +45,9 @@ public class GameManager : MonoBehaviour
             rayed.Casted();
         }
     }
+    #endregion
 
+    #region Gameplay
     public void ChooseObject()
     {
         if (currentObj != null)
@@ -57,8 +64,11 @@ public class GameManager : MonoBehaviour
 
             lastObj = currentObj;
         }
-    }
+    } //Checks what object the pointer is hovering
 
+    #endregion
+
+    #region Haptics
     public void PlayHaptic(string name = "Presence")
     {
         library.PlaySensationWithName(name);
@@ -75,4 +85,5 @@ public class GameManager : MonoBehaviour
 
         return path;
     }
+    #endregion
 }
