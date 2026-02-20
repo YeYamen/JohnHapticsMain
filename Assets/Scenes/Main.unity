@@ -8358,6 +8358,9 @@ MonoBehaviour:
   rayLength: 20
   debugText: {fileID: 2084167285}
   lastObj: {fileID: 1348656251}
+  cards: []
+  currentCard: {fileID: 0}
+  correctCard: {fileID: 0}
 --- !u!1 &1401307813
 GameObject:
   m_ObjectHideFlags: 0
@@ -8390,6 +8393,37 @@ Transform:
   - {fileID: 8646415826239641986}
   - {fileID: 4732911390197680484}
   m_Father: {fileID: 144288324}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1599342391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599342392}
+  m_Layer: 0
+  m_Name: ----EDIT UNDER THE LINE FOR ASSETS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599342392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599342391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1659934956
 PrefabInstance:
@@ -8833,25 +8867,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1996045304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4739376538970526763, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
-  m_PrefabInstance: {fileID: 1072337851415923824}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1996045309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996045304}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4432679d28c28af41a16d7697897e7dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  fadeTime: 0
 --- !u!114 &2009579787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 585989404, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
@@ -12768,6 +12783,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.16
       objectReference: {fileID: 0}
+    - target: {fileID: 2979813552405387201, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: fcc4763f583432145b78034547619453, type: 3}
     - target: {fileID: 3781482324824889495, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.022
@@ -12792,6 +12811,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.51
       objectReference: {fileID: 0}
+    - target: {fileID: 4671463253564056598, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 205438da39163834b894e3a17f6f42ea, type: 3}
     - target: {fileID: 4697438988530715141, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -12844,6 +12867,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4876620944071021255, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6137b2ba40b7ded4cbd4b3ce645727da, type: 3}
     - target: {fileID: 5247387974300028003, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.022
@@ -12929,10 +12956,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4697438988530715141, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1087951633}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4739376538970526763, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1996045309}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
 --- !u!1 &1123781763341160647
 GameObject:
@@ -12980,7 +13004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkBothHands: 1
   chiralityToCheck: 0
-  poseToDetect: {fileID: 11400000, guid: dd86831cf54442042af85f777818de1f, type: 2}
+  poseToDetect: {fileID: 11400000, guid: 595abe06d4fcf25458ac3f6f2fbe97f0, type: 2}
   posesToDetect: []
   leapProvider: {fileID: 0}
   OnPoseDetected:
@@ -13196,6 +13220,30 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 950e6e66be1f197459ac2cc4676f2af2, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1364615530}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: FindCardsInScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1364615530}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: SetCorrectCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13820,6 +13868,10 @@ PrefabInstance:
     - target: {fileID: 3470183723361216, guid: c7d8f1e72a29e504ea176fcef19dfe59, type: 3}
       propertyPath: m_Name
       value: JohnHaptics
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470183723361216, guid: c7d8f1e72a29e504ea176fcef19dfe59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8460695436278729000, guid: c7d8f1e72a29e504ea176fcef19dfe59, type: 3}
       propertyPath: m_LocalScale.x
@@ -18951,14 +19003,15 @@ SceneRoots:
   - {fileID: 1364615529}
   - {fileID: 1930569014}
   - {fileID: 1694115713}
-  - {fileID: 6778063263610305002}
-  - {fileID: 8072567905923699515}
   - {fileID: 3582974589753773267}
-  - {fileID: 5892692677201548373}
-  - {fileID: 1072337851415923824}
-  - {fileID: 361724737732819178}
-  - {fileID: 1659934956}
   - {fileID: 2420296550982557193}
   - {fileID: 4421628824226732638}
   - {fileID: 144288323}
   - {fileID: 2068605558}
+  - {fileID: 1599342392}
+  - {fileID: 6778063263610305002}
+  - {fileID: 8072567905923699515}
+  - {fileID: 5892692677201548373}
+  - {fileID: 1072337851415923824}
+  - {fileID: 361724737732819178}
+  - {fileID: 1659934956}
