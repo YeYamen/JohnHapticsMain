@@ -8031,7 +8031,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1364615530}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: PlayHaptic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8394,6 +8394,38 @@ Transform:
   - {fileID: 4732911390197680484}
   m_Father: {fileID: 144288324}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1429608589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429608590}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1429608590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429608589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1930569014}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1599342391
 GameObject:
   m_ObjectHideFlags: 0
@@ -8736,7 +8768,7 @@ GameObject:
   - component: {fileID: 1930569015}
   - component: {fileID: 1930569016}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: LeftHandAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8750,12 +8782,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930569013}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1429608590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1930569015
 MonoBehaviour:
@@ -8780,7 +8812,7 @@ AudioSource:
   m_GameObject: {fileID: 1930569013}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088958018743183945, guid: 118cb0582ba9abe498fb3118e315eb23, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -12787,6 +12819,10 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: fcc4763f583432145b78034547619453, type: 3}
+    - target: {fileID: 2979813552405387201, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
+      propertyPath: hapticName
+      value: Open
+      objectReference: {fileID: 0}
     - target: {fileID: 3781482324824889495, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.022
@@ -12815,6 +12851,10 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: 205438da39163834b894e3a17f6f42ea, type: 3}
+    - target: {fileID: 4671463253564056598, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
+      propertyPath: hapticName
+      value: Presence
+      objectReference: {fileID: 0}
     - target: {fileID: 4697438988530715141, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -12871,6 +12911,10 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: 6137b2ba40b7ded4cbd4b3ce645727da, type: 3}
+    - target: {fileID: 4876620944071021255, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
+      propertyPath: hapticName
+      value: Dial
+      objectReference: {fileID: 0}
     - target: {fileID: 5247387974300028003, guid: 026736f851c484947bc94eb767ba0d17, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.022
@@ -13383,6 +13427,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
       propertyPath: forceDisplayIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
+      propertyPath: showHologramPreview
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
@@ -14043,7 +14091,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1364615530}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: PlayHaptic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19001,7 +19049,6 @@ SceneRoots:
   - {fileID: 3189381015892101483}
   - {fileID: 832575519}
   - {fileID: 1364615529}
-  - {fileID: 1930569014}
   - {fileID: 1694115713}
   - {fileID: 3582974589753773267}
   - {fileID: 2420296550982557193}
@@ -19009,6 +19056,7 @@ SceneRoots:
   - {fileID: 144288323}
   - {fileID: 2068605558}
   - {fileID: 1599342392}
+  - {fileID: 1429608590}
   - {fileID: 6778063263610305002}
   - {fileID: 8072567905923699515}
   - {fileID: 5892692677201548373}

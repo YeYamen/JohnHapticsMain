@@ -13,6 +13,7 @@ public class CardBehaviour : Raycastables
     private SoundPlayer audioSource = null;
 
     [SerializeField] AudioClip sound;
+    public string hapticName;
 
     Vector3 closeUp = new UnityEngine.Vector3(0.5f, 0.05f, -0.3f);
     Vector3 originalPos;
@@ -27,7 +28,6 @@ public class CardBehaviour : Raycastables
         library = FindAnyObjectByType<HapticLibraryPlayer>();
         gm = gameObject.GetComponent<GameManager>();
         audioSource = FindAnyObjectByType<SoundPlayer>();
-        print(audioSource.gameObject.name);
 
         originalPos = transform.localPosition;
     }

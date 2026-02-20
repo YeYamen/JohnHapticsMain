@@ -21,8 +21,7 @@ public class SoundPlayer : MonoBehaviour
     public void PlayTheSound(AudioClip soundClip)
     {
         source.volume = startVolume;
-        source.clip = soundClip;
-        source.Play();
+        source.PlayOneShot(soundClip);
         StartCoroutine(FadeIn(source, fadeTime));
     }
 

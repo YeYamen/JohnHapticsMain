@@ -109,9 +109,9 @@ public class GameManager : MonoBehaviour
     } //Checks what object the pointer is hovering
 
 
-    public void PlayHaptic(string name = "Presence")
+    public void PlayHaptic()
     {
-        library.PlaySensationWithName(name);
+        library.PlaySensationWithName(correctCard.hapticName);
     }
 
     public void StopHaptic()
