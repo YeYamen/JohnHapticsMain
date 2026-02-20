@@ -6,7 +6,6 @@ using HapE.Unity;
 
 public class GameManager : MonoBehaviour
 {
-    #region Variables
 
     public HapEDeviceManager hapticsDevice = null;
     public HapticLibraryPlayer library =  null;
@@ -16,8 +15,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TMP_Text debugText;
     [SerializeField] GameObject lastObj;
-
-    #endregion
 
     private void Start()
     {
@@ -47,7 +44,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    #region Gameplay
     public void ChooseObject()
     {
         if (currentObj != null)
@@ -66,9 +62,7 @@ public class GameManager : MonoBehaviour
         }
     } //Checks what object the pointer is hovering
 
-    #endregion
 
-    #region Haptics
     public void PlayHaptic(string name = "Presence")
     {
         library.PlaySensationWithName(name);
@@ -85,5 +79,4 @@ public class GameManager : MonoBehaviour
 
         return path;
     }
-    #endregion
 }
