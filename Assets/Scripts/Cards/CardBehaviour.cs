@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using HapE.Unity;
 
 public class CardBehaviour : Raycastables
 {
+    private HapEDeviceManager hapticsDevice = null;
+    private HapticLibraryPlayer library = null;
+    private GameManager gm = null;
+    private SoundPlayer audioSource = null;
+
+    [SerializeField] AudioClip sound;
+
     Vector3 closeUp = new UnityEngine.Vector3(0.5f, 0.05f, -0.3f);
     Vector3 originalPos;
 
@@ -15,6 +23,12 @@ public class CardBehaviour : Raycastables
 
     private void Start()
     {
+        hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
+        library = FindAnyObjectByType<HapticLibraryPlayer>();
+        gm = gameObject.GetComponent<GameManager>();
+        audioSource = FindAnyObjectByType<SoundPlayer>();
+        print(audioSource.gameObject.name);
+
         originalPos = transform.localPosition;
     }
 
@@ -33,11 +47,23 @@ public class CardBehaviour : Raycastables
     {
         transform.localPosition = closeUp;
         transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
+
+
     }
 
     private void FixedUpdate()
     {
         transform.localPosition = originalPos;
         transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+    }
+
+    public void CorrectCardAction()
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayTheSound(sound);
+        }
+
+        this.gameObject.SetActive(false);
     }
 }
