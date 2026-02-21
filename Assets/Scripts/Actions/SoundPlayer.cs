@@ -13,7 +13,6 @@ public class SoundPlayer : MonoBehaviour
     #endregion
     private void Start()
     {
-        source = GetComponent<AudioSource>();
         startVolume = source.volume;
     }
 

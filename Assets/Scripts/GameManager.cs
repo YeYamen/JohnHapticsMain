@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     GameObject currentObj;
 
     [SerializeField] TMP_Text debugText;
-    [SerializeField] GameObject lastObj;
+    public GameObject lastObj;
 
     [SerializeField] List<CardBehaviour> cards;
     public GameObject currentCard;
@@ -125,10 +125,7 @@ public class GameManager : MonoBehaviour
 
     public void StopHaptic()
     {
-        if (library.isPlaying() == false)
-        {
-            library.ClearCurrentSensation();
-        }
+         library.ClearCurrentSensation();
     }
 
     string CombineJSONName(string name)

@@ -1,0 +1,169 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 84.88264,
+    "A": 0.015,
+    "B": 0.015,
+    "a": 1.0,
+    "b": 1.0,
+    "max_t": 6.28318548,
+    "d": 1.57079637,
+    "k": 0.0
+  },
+  "animator": {
+    "enabled": false,
+    "T1a1_switch_count": 0,
+    "T1a2_switch_count": 0
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 0.00312530063,
+        "t": 0.00172489893
+      },
+      {
+        "intensity": 0.117158584,
+        "t": 0.0015058663
+      },
+      {
+        "intensity": 0.458356917,
+        "t": 0.00136896945
+      },
+      {
+        "intensity": 0.7748903,
+        "t": 0.001630866
+      },
+      {
+        "intensity": 0.8950177,
+        "t": 0.0320390165
+      },
+      {
+        "intensity": 0.997487664,
+        "t": 0.0338999629
+      },
+      {
+        "intensity": 0.4110823,
+        "t": 0.0200442374
+      },
+      {
+        "intensity": 0.166488469,
+        "t": 0.0179018676
+      },
+      {
+        "intensity": 0.008221646,
+        "t": 0.00427544862
+      },
+      {
+        "intensity": 0.00616610935,
+        "t": 0.004243806
+      },
+      {
+        "intensity": 0.770779431,
+        "t": 0.00109517574
+      },
+      {
+        "intensity": 0.9557665,
+        "t": 0.00139398873
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.009831503
+      },
+      {
+        "intensity": 0.9958892,
+        "t": 0.009172171
+      },
+      {
+        "intensity": 0.9763206,
+        "t": 0.0102672577
+      },
+      {
+        "intensity": 0.8365526,
+        "t": 0.0102672875
+      },
+      {
+        "intensity": 0.6926738,
+        "t": 0.008898303
+      },
+      {
+        "intensity": 0.5816816,
+        "t": 0.0101303309
+      },
+      {
+        "intensity": 0.478911,
+        "t": 0.009993523
+      },
+      {
+        "intensity": 0.3720296,
+        "t": 0.009308994
+      },
+      {
+        "intensity": 0.285702318,
+        "t": 0.009856582
+      },
+      {
+        "intensity": 0.203485876,
+        "t": 0.0101303458
+      },
+      {
+        "intensity": 0.154156,
+        "t": 0.009202331
+      },
+      {
+        "intensity": 0.112656474,
+        "t": 0.009826347
+      },
+      {
+        "intensity": 0.0924936458,
+        "t": 0.009993523
+      },
+      {
+        "intensity": 0.06782871,
+        "t": 0.0039974004
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 27,
+    "repeat_count": 1
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.252
+      },
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 2,
+    "repeat_count": 1
+  },
+  "fixation_mode": 0,
+  "fixation_offset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "hapticName": "Confirm",
+  "brushName": "Circle"
+}

@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 60.0,
+    "A": 0.00826914,
+    "B": 0.0327570178,
+    "a": 1.0,
+    "b": 1.0,
+    "max_t": 6.28318548,
+    "d": 1.57079637,
+    "k": 0.0
+  },
+  "animator": {
+    "enabled": false,
+    "T1a1_switch_count": 0,
+    "T1a2_switch_count": 0
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 1.0,
+        "t": 0.224126473
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.02322708
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.00264644623
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 4,
+    "repeat_count": 1
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.25
+      },
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 2,
+    "repeat_count": 0
+  },
+  "fixation_mode": 4,
+  "fixation_offset": {
+    "x": 0.0,
+    "y": -0.01,
+    "z": 0.0,
+    "normalized": {
+      "x": 0.0,
+      "y": -1.0,
+      "z": 0.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 0.01,
+    "sqrMagnitude": 0.0001
+  },
+  "hapticName": "Finger Buzz Index",
+  "brushName": "Primitive",
+  "presetName": "Ellipse"
+}

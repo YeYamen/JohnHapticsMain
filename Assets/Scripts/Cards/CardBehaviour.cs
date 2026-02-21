@@ -20,15 +20,13 @@ public class CardBehaviour : Raycastables
     Vector3 closeUp = new UnityEngine.Vector3(0.5f, 0.05f, -0.3f);
     Vector3 originalPos;
 
-    float minAngle = -20f;
-    float maxAngle = 20f;
-    float turnSpeed = 0.4f;
 
 
     [Space, Header("Card Events"), Space]
     public UnityEvent correctCardEvent;
     public UnityEvent wrongCardEvent;
     public UnityEvent onHover;
+    public UnityEvent offHover;
 
     private void Start()
     {
@@ -39,7 +37,7 @@ public class CardBehaviour : Raycastables
         SoundPlayer[] s = FindObjectsOfType<SoundPlayer>();
         foreach(SoundPlayer so in s)
         {
-            if(so.gameObject.name == "LeftHandAudio")
+            if(so.gameObject.name == "CardAudio")
             {
                 audioSource = so;
             }
@@ -48,28 +46,20 @@ public class CardBehaviour : Raycastables
         originalPos = transform.localPosition;
     }
 
-    public override void Update()
-    {
-        // PingPong creates a 0 -> duration -> 0 value
-        float time = Mathf.PingPong(Time.time * turnSpeed, 1f);
-
-        // LerpAngle handles 360-0 degree wrapping
-        float nextAngle = Mathf.LerpAngle(minAngle, maxAngle, time);
-
-        transform.eulerAngles = new Vector3(0, nextAngle, 0);
-    }
-
     public override void Casted()
     {
-        this.CardHover();
+        CardHover();
 
-        transform.localPosition = closeUp;
         transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
     }
 
     private void FixedUpdate()
     {
-        transform.localPosition = originalPos;
+        if(gm.currentCard != this.gameObject)
+        {
+            OffCardHover();
+        }
+
         transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
@@ -98,6 +88,11 @@ public class CardBehaviour : Raycastables
     internal void CardHover()
     {
         onHover?.Invoke();
+    }
+
+    internal void OffCardHover()
+    {
+        offHover?.Invoke();
     }
 
     #endregion
