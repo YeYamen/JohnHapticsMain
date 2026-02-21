@@ -1,9 +1,11 @@
+using HapE.Unity;
+using Leap.Unity.PhysicalHands;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
-using HapE.Unity;
 
 public class CardBehaviour : Raycastables
 {
@@ -22,12 +24,26 @@ public class CardBehaviour : Raycastables
     float maxAngle = 20f;
     float turnSpeed = 0.4f;
 
+
+    [Space, Header("Card Events"), Space]
+    public UnityEvent correctCardEvent;
+    public UnityEvent wrongCardEvent;
+    public UnityEvent onHover;
+
     private void Start()
     {
         hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
         library = FindAnyObjectByType<HapticLibraryPlayer>();
         gm = gameObject.GetComponent<GameManager>();
-        audioSource = FindAnyObjectByType<SoundPlayer>();
+
+        SoundPlayer[] s = FindObjectsOfType<SoundPlayer>();
+        foreach(SoundPlayer so in s)
+        {
+            if(so.gameObject.name == "LeftHandAudio")
+            {
+                audioSource = so;
+            }
+        }
 
         originalPos = transform.localPosition;
     }
@@ -45,10 +61,10 @@ public class CardBehaviour : Raycastables
 
     public override void Casted()
     {
+        this.CardHover();
+
         transform.localPosition = closeUp;
         transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
-
-
     }
 
     private void FixedUpdate()
@@ -62,8 +78,27 @@ public class CardBehaviour : Raycastables
         if (audioSource != null)
         {
             audioSource.PlayTheSound(sound);
-        }
 
-        this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
     }
+
+    #region Events
+
+    internal void CorrectCardEvent()
+    {
+        correctCardEvent?.Invoke();
+    }
+
+    internal void WrongCardEvent()
+    {
+        wrongCardEvent?.Invoke();
+    }
+
+    internal void CardHover()
+    {
+        onHover?.Invoke();
+    }
+
+    #endregion
 }

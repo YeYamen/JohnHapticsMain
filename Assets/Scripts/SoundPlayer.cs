@@ -25,6 +25,15 @@ public class SoundPlayer : MonoBehaviour
         StartCoroutine(FadeIn(source, fadeTime));
     }
 
+    public void ReplaceSound(AudioClip soundClip)
+    {
+        source.clip = soundClip;
+        if (!source.isPlaying)
+        {
+            source.Play();
+        }
+    }
+
     public void StopTheSound() 
     {
         StartCoroutine(FadeOut(source, fadeTime));

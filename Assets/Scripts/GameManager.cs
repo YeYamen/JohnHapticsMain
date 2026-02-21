@@ -48,7 +48,14 @@ public class GameManager : MonoBehaviour
             {
                 if (card.name == correctCard.name)
                 {
-                    card.CorrectCardAction();
+                    card.CorrectCardEvent();
+
+                    correctCard = null;
+                    currentObj = null;
+                }
+                else
+                {
+                    card.WrongCardEvent();
                 }
             }
         }
@@ -89,7 +96,6 @@ public class GameManager : MonoBehaviour
         if (currentCard.GetComponent<CardBehaviour>() != null)
         {
             IsCardCorrect(currentObj);
-            correctCard = null;
         }
 
         //if (currentObj != null)
@@ -111,12 +117,18 @@ public class GameManager : MonoBehaviour
 
     public void PlayHaptic()
     {
-        library.PlaySensationWithName(correctCard.hapticName);
+        if (library.isPlaying() == false)
+        {
+            library.PlaySensationWithName(correctCard.hapticName);
+        }
     }
 
     public void StopHaptic()
     {
-        library.ClearCurrentSensation();
+        if (library.isPlaying() == false)
+        {
+            library.ClearCurrentSensation();
+        }
     }
 
     string CombineJSONName(string name)
