@@ -20,8 +20,6 @@ public class CardBehaviour : Raycastables
     Vector3 closeUp = new UnityEngine.Vector3(0.5f, 0.05f, -0.3f);
     Vector3 originalPos;
 
-
-
     [Space, Header("Card Events"), Space]
     public UnityEvent correctCardEvent;
     public UnityEvent wrongCardEvent;
