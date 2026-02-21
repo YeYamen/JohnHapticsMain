@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class IndependentActions : MonoBehaviour
 {
+    private void FixedUpdate()
+    {
+        
+    }
 
     public void MoveRigidbody(TravelPath path)
     {
@@ -13,5 +17,10 @@ public class IndependentActions : MonoBehaviour
     public void RotateRigidBody(RotatePath path)
     {
         path.CheckRotate();
+    }
+
+    public void ScaleObject(TravelPath path)
+    {
+        path.ScaleObject();
     }
 }

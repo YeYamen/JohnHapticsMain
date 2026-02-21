@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     {
         hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
         library = FindAnyObjectByType<HapticLibraryPlayer>();
+
+        FindCardsInScene();
+        SetCorrectCard();
     }
 
     #region Card Actions
@@ -35,6 +38,12 @@ public class GameManager : MonoBehaviour
 
     public void SetCorrectCard()
     {
+        if (cards == null || cards.Count == 0)
+        {
+            print("Cards list is empty or null!");
+            return;
+        }
+
         correctCard = cards[Random.Range(0, cards.Count)];
     }
 
@@ -50,7 +59,9 @@ public class GameManager : MonoBehaviour
                 {
                     card.CorrectCardEvent();
 
-                    correctCard = null;
+                    cards.Remove(card);
+                    SetCorrectCard();
+
                     currentObj = null;
                 }
                 else
@@ -113,7 +124,6 @@ public class GameManager : MonoBehaviour
         //    lastObj = currentObj;
         //}
     } //Checks what object the pointer is hovering
-
 
     public void PlayHaptic()
     {

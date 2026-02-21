@@ -170,6 +170,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 75382799368088159, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1873
+      objectReference: {fileID: 0}
+    - target: {fileID: 75382799368088159, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1376
+      objectReference: {fileID: 0}
     - target: {fileID: 238151144574653898, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -244,7 +252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1068431545941657295, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17522913
+      value: -0.012070864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068431545941657295, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015397146
       objectReference: {fileID: 0}
     - target: {fileID: 1099734111036267318, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7540,6 +7552,37 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &312952033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 312952034}
+  m_Layer: 0
+  m_Name: Card2OriginalPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &312952034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312952033}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.05423252, y: 0.7714009, z: -0.10987485, w: 0.6244413}
+  m_LocalPosition: {x: 0.5, y: -0.125, z: 0.18100002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 5751398295577265781}
+  m_LocalEulerAnglesHint: {x: 13.724, y: 101.64, z: -3.16}
 --- !u!1 &324064503
 GameObject:
   m_ObjectHideFlags: 0
@@ -8063,6 +8106,7 @@ Transform:
   m_Children:
   - {fileID: 244313577}
   - {fileID: 1258397050}
+  - {fileID: 854350018}
   m_Father: {fileID: 144288325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &802465305
@@ -8175,6 +8219,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5149643051617453514, guid: c11a9bf30806e5a438072e14daf494e6, type: 3}
   m_PrefabInstance: {fileID: 802465305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &807564126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 807564127}
+  m_Layer: 0
+  m_Name: BallMovePositionRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &807564127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807564126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1401307814}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,6 +8297,70 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &854350017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854350018}
+  m_Layer: 0
+  m_Name: BallMovePositionLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854350018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854350017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 798466183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &906468054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906468055}
+  m_Layer: 0
+  m_Name: WorldPositions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &906468055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906468054}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1137459805}
+  - {fileID: 1680255967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962342842
@@ -8310,6 +8449,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8842511771679321484}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: MoveRigidbody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5970939318401531930}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8590,7 +8741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137459805}
   m_Layer: 0
-  m_Name: CardTransform
+  m_Name: CardZoomPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8604,13 +8755,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137459804}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24988218, y: 0.3355666, z: 0.074570455, w: 0.9052034}
-  m_LocalPosition: {x: 0.786, y: -0.112, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.1260313, y: -0.25794175, z: 0.033958666, w: 0.95730305}
+  m_LocalPosition: {x: -0.2215, y: 0.34050003, z: 0.1185}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 5751398295577265781}
-  m_LocalEulerAnglesHint: {x: 23.725, y: 44.773, z: 19.308}
+  m_Father: {fileID: 906468055}
+  m_LocalEulerAnglesHint: {x: 15, y: -30.16, z: 0}
 --- !u!4 &1213437321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8017005901968948058, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
@@ -8757,6 +8908,7 @@ Transform:
   m_Children:
   - {fileID: 8646415826239641986}
   - {fileID: 4732911390197680484}
+  - {fileID: 807564127}
   m_Father: {fileID: 144288324}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429608589
@@ -8834,7 +8986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538384619}
   m_Layer: 0
-  m_Name: CardTransform (1)
+  m_Name: Card1OriginalPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8848,13 +9000,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538384618}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.12572512, y: -0.85497665, z: -0.15513372, w: 0.47868752}
-  m_LocalPosition: {x: 0.112, y: -0.112, z: 0.054}
+  m_LocalRotation: {x: 0.07569698, y: 0.6223379, z: 0.096479, w: 0.7730831}
+  m_LocalPosition: {x: -0.07999998, y: -0.125, z: 0.18100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5751398295577265781}
-  m_LocalEulerAnglesHint: {x: -22.683, y: -122.341, z: 4.131}
+  m_LocalEulerAnglesHint: {x: 0, y: 77.8, z: 0}
 --- !u!1 &1599342391
 GameObject:
   m_ObjectHideFlags: 0
@@ -8897,6 +9049,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35d303542ebe874296e5ac7907f763a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1680255966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680255967}
+  m_Layer: 0
+  m_Name: CrystalBallOriginalPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1680255967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680255966}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17, y: 0.23, z: 0.1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 906468055}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1694115713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9215,6 +9398,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1960542227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960542228}
+  m_Layer: 0
+  m_Name: Card3OriginalPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960542228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960542227}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.08746629, y: 0.67635226, z: -0.08139254, w: 0.72682357}
+  m_LocalPosition: {x: 0.20300001, y: -0.010999978, z: 0.257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 5751398295577265781}
+  m_LocalEulerAnglesHint: {x: 13.724, y: 85.88, z: 0}
 --- !u!114 &2009579787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 585989404, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
@@ -13827,7 +14041,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.119495906, y: -0.0011374886, z: 0.027549205, w: 0.9924518}
   m_LocalPosition: {x: -0.08, y: -0.125, z: 0.181}
-  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.009999998}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3993826939185421775}
@@ -14925,30 +15139,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1364615530}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FindCardsInScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1364615530}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SetCorrectCard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   WhilePoseDetected:
     m_PersistentCalls:
       m_Calls:
@@ -14996,16 +15186,100 @@ MonoBehaviour:
   hapticName: Open
   correctCardEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6345954317148086466}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   wrongCardEvent:
     m_PersistentCalls:
       m_Calls: []
   onHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: MoveRigidbody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758713}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: RotateRigidBody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758711}
+          m_ObjectArgumentAssemblyTypeName: RotatePath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: ScaleObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758713}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   offHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: MoveRigidbody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758712}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: RotateRigidBody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758711}
+          m_ObjectArgumentAssemblyTypeName: RotatePath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: ScaleObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758712}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2863608980486411263
 Transform:
   m_ObjectHideFlags: 0
@@ -16763,6 +17037,9 @@ GameObject:
   - component: {fileID: 5569977959375134391}
   - component: {fileID: 5651899411763819722}
   - component: {fileID: 7219388577004758710}
+  - component: {fileID: 7219388577004758713}
+  - component: {fileID: 7219388577004758712}
+  - component: {fileID: 7219388577004758711}
   m_Layer: 0
   m_Name: Card_Square
   m_TagString: Untagged
@@ -17712,16 +17989,100 @@ MonoBehaviour:
   hapticName: Dial
   correctCardEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4560550409935472817}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   wrongCardEvent:
     m_PersistentCalls:
       m_Calls: []
   onHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: MoveRigidbody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758713}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: RotateRigidBody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758711}
+          m_ObjectArgumentAssemblyTypeName: RotatePath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: ScaleObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758713}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   offHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: MoveRigidbody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758712}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: RotateRigidBody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758711}
+          m_ObjectArgumentAssemblyTypeName: RotatePath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: ScaleObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758712}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &5602129233577832840
 Transform:
   m_ObjectHideFlags: 0
@@ -17800,7 +18161,6 @@ GameObject:
   - component: {fileID: 832683834704079601}
   - component: {fileID: 2553629926858316268}
   - component: {fileID: 6122831621060066900}
-  - component: {fileID: 6554966908810473556}
   m_Layer: 0
   m_Name: CrystalBallModel
   m_TagString: Untagged
@@ -17824,31 +18184,31 @@ MonoBehaviour:
   hapticName: Presence
   correctCardEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5702700904867862619}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   wrongCardEvent:
     m_PersistentCalls:
       m_Calls: []
   onHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1930569015}
-        m_TargetAssemblyTypeName: SoundPlayer, Assembly-CSharp
-        m_MethodName: ReplaceSound
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: dae64bccc20f5964998cee1680a62803, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 544790792}
         m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
         m_MethodName: MoveRigidbody
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8521462553670220470}
+          m_ObjectArgument: {fileID: 7219388577004758713}
           m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -17860,8 +18220,20 @@ MonoBehaviour:
         m_MethodName: RotateRigidBody
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8521462553670220472}
+          m_ObjectArgument: {fileID: 7219388577004758711}
           m_ObjectArgumentAssemblyTypeName: RotatePath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: ScaleObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758713}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -17875,7 +18247,31 @@ MonoBehaviour:
         m_MethodName: MoveRigidbody
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8521462553670220471}
+          m_ObjectArgument: {fileID: 7219388577004758712}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: RotateRigidBody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758711}
+          m_ObjectArgumentAssemblyTypeName: RotatePath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: ScaleObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7219388577004758712}
           m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -17953,8 +18349,9 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1137459805}
   - {fileID: 1538384619}
+  - {fileID: 312952034}
+  - {fileID: 1960542228}
   - {fileID: 1135768903351718175}
   - {fileID: 3242664683549423361}
   - {fileID: 458170198051966451}
@@ -18161,6 +18558,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426998184861049155}
+  - component: {fileID: 5970939318401531930}
+  - component: {fileID: 5970939318401531929}
+  - component: {fileID: 5970939318401531928}
+  - component: {fileID: 5970939318401531931}
+  - component: {fileID: 5970939318401531932}
   m_Layer: 0
   m_Name: CrystalBall
   m_TagString: Untagged
@@ -18168,6 +18570,186 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &5970939318401531928
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970939318401531927}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &5970939318401531929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970939318401531927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 807564127}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0, y: 0, z: 0}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5970939318401531930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970939318401531927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 854350018}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0, y: 0, z: 0}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!135 &5970939318401531931
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970939318401531927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5970939318401531932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970939318401531927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 1680255967}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0, y: 0, z: 0}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6015597622887414944
 GameObject:
   m_ObjectHideFlags: 0
@@ -18512,6 +19094,9 @@ GameObject:
   - component: {fileID: 2863120836772928433}
   - component: {fileID: 3554807221076154118}
   - component: {fileID: 378912620864321223}
+  - component: {fileID: 6345954317148086469}
+  - component: {fileID: 6345954317148086468}
+  - component: {fileID: 6345954317148086467}
   m_Layer: 0
   m_Name: Card_Circle
   m_TagString: Untagged
@@ -18519,6 +19104,177 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6345954317148086467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345954317148086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70331961b1b4f924cbb07bafb7511403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: {fileID: 1960542228}
+  maxAngle: {fileID: 1137459805}
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0069060773
+      value: 0.0021413276
+      inSlope: 0.7751607
+      outSlope: 0.7751607
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11732417
+    - serializedVersion: 3
+      time: 0.501357
+      value: 0.0011889107
+      inSlope: -0.61182606
+      outSlope: -0.61182606
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13023616
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.5741932
+      outSlope: 0.5741932
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14957719
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
+--- !u!114 &6345954317148086468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345954317148086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 1960542228}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0.02, y: 0.02, z: 0.02}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6345954317148086469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345954317148086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 1137459805}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0.01, y: 0.01, z: 0.01}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &6360985371913130266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18659,27 +19415,6 @@ Transform:
   - {fileID: 4739358530225059819}
   m_Father: {fileID: 7281384921540599564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6554966908810473556
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5629186413363133096}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 3.7803872
-  m_Center: {x: -0.0000011920929, y: 0, z: -0.0000011920929}
 --- !u!212 &6581309993785267879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18959,6 +19694,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 544790792}
+        m_TargetAssemblyTypeName: IndependentActions, Assembly-CSharp
+        m_MethodName: MoveRigidbody
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5970939318401531929}
+          m_ObjectArgumentAssemblyTypeName: TravelPath, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPoseLost:
     m_PersistentCalls:
       m_Calls:
@@ -19007,10 +19754,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6874244894420778400}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.682699, y: -1.4130874, z: 5.273165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3582974589753773267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19286,6 +20033,177 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!114 &7219388577004758711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560550409935472817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70331961b1b4f924cbb07bafb7511403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: {fileID: 312952034}
+  maxAngle: {fileID: 1137459805}
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.0032164901
+      inSlope: 1.6197054
+      outSlope: 1.6197054
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13852555
+    - serializedVersion: 3
+      time: 0.5014112
+      value: -0.0083877705
+      inSlope: -1.2887754
+      outSlope: -1.2887754
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.21965417
+    - serializedVersion: 3
+      time: 0.99333
+      value: -0.0134128975
+      inSlope: 1.5652654
+      outSlope: 1.5652654
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13683584
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
+--- !u!114 &7219388577004758712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560550409935472817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 312952034}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0.02, y: 0.02, z: 0.02}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7219388577004758713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560550409935472817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daa2f1b415359f4e81aeba8cd852029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPosition: {fileID: 1137459805}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0.01, y: 0.01, z: 0.01}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7273148640541311357
 GameObject:
   m_ObjectHideFlags: 0
@@ -20227,6 +21145,31 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  scaleSize: {x: 0.01, y: 0.01, z: 0.01}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &8521462553670220471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20257,6 +21200,31 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleSize: {x: 0.02, y: 0.02, z: 0.02}
+  scaleSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -25478,6 +26446,7 @@ SceneRoots:
   - {fileID: 2068605558}
   - {fileID: 1116144523}
   - {fileID: 1599342392}
+  - {fileID: 906468055}
   - {fileID: 544790793}
   - {fileID: 1429608590}
   - {fileID: 4900775602607851578}

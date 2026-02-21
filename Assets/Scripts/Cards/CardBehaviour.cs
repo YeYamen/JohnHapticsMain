@@ -32,7 +32,7 @@ public class CardBehaviour : Raycastables
     {
         hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
         library = FindAnyObjectByType<HapticLibraryPlayer>();
-        gm = gameObject.GetComponent<GameManager>();
+        gm = FindAnyObjectByType<GameManager>();
 
         SoundPlayer[] s = FindObjectsOfType<SoundPlayer>();
         foreach(SoundPlayer so in s)
@@ -55,7 +55,7 @@ public class CardBehaviour : Raycastables
 
     private void FixedUpdate()
     {
-        if(gm.currentCard != this.gameObject)
+        if (gm.currentCard != this.gameObject || gm.currentCard == null)
         {
             OffCardHover();
         }
