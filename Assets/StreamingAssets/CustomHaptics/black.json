@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 127.0,
+    "A": 0.005,
+    "B": 0.005,
+    "a": 1.0,
+    "b": 1.0,
+    "max_t": 6.28318548,
+    "d": 1.57079637,
+    "k": 0.0
+  },
+  "animator": {
+    "enabled": true,
+    "T1": [
+      1.0,
+      0.0,
+      0.02564355,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "T2a1": [
+      0.999951065,
+      -0.009894619,
+      0.0,
+      0.009894619,
+      0.999951065,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "T1a1_switch_count": 0,
+    "T1a2_switch_count": 0
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 1.0,
+        "t": 29.4239979
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 2,
+    "repeat_count": 0
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": 0.002666664,
+        "y": -0.00430000434,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 1,
+    "repeat_count": 0
+  },
+  "fixation_mode": 0,
+  "fixation_offset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "hapticName": "black1",
+  "brushName": "Dial",
+  "audioFilename": "black.mp3"
+}

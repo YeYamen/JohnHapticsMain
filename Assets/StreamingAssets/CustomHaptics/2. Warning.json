@@ -1,0 +1,182 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 132.574417,
+    "A": 0.009603961,
+    "B": 0.009603961,
+    "a": 1.0,
+    "b": 1.0,
+    "max_t": 6.28318548,
+    "d": 1.57079637,
+    "k": 0.0
+  },
+  "animator": {
+    "enabled": false,
+    "T1a1_switch_count": 0,
+    "T1a2_switch_count": 0
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 1.0,
+        "t": 0.0899993554
+      },
+      {
+        "intensity": 1.0,
+        "t": 4.76837158E-07
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0299997926
+      },
+      {
+        "intensity": 0.0,
+        "t": 4.84287739E-07
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.08999936
+      },
+      {
+        "intensity": 1.0,
+        "t": 4.76837158E-07
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0299997926
+      },
+      {
+        "intensity": 0.0,
+        "t": 4.76837158E-07
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.08999935
+      },
+      {
+        "intensity": 1.0,
+        "t": 4.76837158E-07
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0299997926
+      },
+      {
+        "intensity": 0.0,
+        "t": 5.066395E-07
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.08999935
+      },
+      {
+        "intensity": 1.0,
+        "t": 4.76837158E-07
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0299998224
+      },
+      {
+        "intensity": 0.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 16,
+    "repeat_count": 0
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": 0.00148147345,
+        "y": 0.0354777575,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.06
+      },
+      {
+        "x": 0.000370371359,
+        "y": 0.0354777575,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.06
+      },
+      {
+        "x": 0.0007407427,
+        "y": 0.0362185,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0599999949
+      },
+      {
+        "x": 0.0370370522,
+        "y": -0.03933705,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0600000024
+      },
+      {
+        "x": 0.03592595,
+        "y": -0.04081853,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0599999875
+      },
+      {
+        "x": 0.0381481536,
+        "y": -0.03933705,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0600000024
+      },
+      {
+        "x": -0.0292592645,
+        "y": -0.036744453,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0600000024
+      },
+      {
+        "x": -0.02703703,
+        "y": -0.037855573,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0600000024
+      },
+      {
+        "x": -0.0288888942,
+        "y": -0.03748519,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 0,
+    "length": 9,
+    "repeat_count": 0
+  },
+  "fixation_mode": 0,
+  "fixation_offset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "hapticName": "2. Warning",
+  "brushName": "Circle",
+  "audioFilename": "Warning.mp3"
+}

@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "format_version": 1,
+  "primitive": {
+    "draw_frequency": 11.9570541,
+    "A": 0.0331606939,
+    "B": 0.01,
+    "a": 1.0,
+    "b": 2.0,
+    "max_t": 6.28318548,
+    "d": 1.57,
+    "k": 0.0
+  },
+  "animator": {
+    "enabled": false,
+    "T1a1_switch_count": 0,
+    "T1a2_switch_count": 0
+  },
+  "envelope": {
+    "enabled": true,
+    "nodes": [
+      {
+        "intensity": 1.0,
+        "t": 40.344
+      },
+      {
+        "intensity": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 2,
+    "length": 2,
+    "repeat_count": 0
+  },
+  "painter": {
+    "enabled": true,
+    "nodes": [
+      {
+        "x": -0.0107407393,
+        "y": 0.05399629,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 13.4466667
+      },
+      {
+        "x": -0.0374074,
+        "y": -0.00970741548,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 13.4466667
+      },
+      {
+        "x": 0.007407415,
+        "y": -0.0441518538,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 13.4466667
+      },
+      {
+        "x": 0.0325925834,
+        "y": 0.0117740752,
+        "z_rotation": 0.0,
+        "x_scale": 1.0,
+        "y_scale": 1.0,
+        "t": 0.0
+      }
+    ],
+    "mode": 2,
+    "length": 4,
+    "repeat_count": 0
+  },
+  "fixation_mode": 0,
+  "fixation_offset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "hapticName": "7. Joy Birds",
+  "brushName": "Primitive",
+  "audioFilename": "birds joy.mp3"
+}
