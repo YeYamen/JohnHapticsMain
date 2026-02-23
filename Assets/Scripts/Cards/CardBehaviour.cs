@@ -14,7 +14,7 @@ public class CardBehaviour : Raycastables
     private GameManager gm = null;
     private SoundPlayer audioSource = null;
 
-    [SerializeField] AudioClip sound;
+    public AudioClip sound;
     public string hapticName;
 
     [Space, Header("Card Events"), Space]

@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent winEvent;
 
+    public AudioSource source;
+
     private void Start()
     {
         hapticsDevice = FindAnyObjectByType<HapEDeviceManager>();
@@ -156,6 +158,12 @@ public class GameManager : MonoBehaviour
     public void StopHaptic()
     {
          library.ClearCurrentSensation();
+    }
+
+    public void HapticSound()
+    {
+        source.clip = correctCard.sound;
+        source.Play();
     }
 
     string CombineJSONName(string name)
