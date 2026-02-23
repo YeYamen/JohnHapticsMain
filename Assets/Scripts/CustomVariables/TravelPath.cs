@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TravelPath : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class TravelPath : MonoBehaviour
 
     Quaternion rotation;
 
+    float distanceFromPosition;
+
 
     private void Start()
     {
@@ -31,6 +34,14 @@ public class TravelPath : MonoBehaviour
 
     private void FixedUpdate()
     {
+        distanceFromPosition = Vector3.Distance(transform.position, pathPosition.position);
+
+        if (distanceFromPosition > 0.7)
+        {
+            MoveBack();
+            return;
+        }
+
         if(isMoving == true) { MoveCheck(); }
         if(isScaling == true) { ScaleObject(); }
         SwitchRotation();
@@ -96,5 +107,16 @@ public class TravelPath : MonoBehaviour
 
         Quaternion newRot = Quaternion.Lerp(transform.rotation, rotation, rotationCurve.Evaluate(Time.deltaTime));
         rb.MoveRotation(newRot);
+    }
+
+    void MoveBack()
+    {
+        rb.freezeRotation = true;
+
+        transform.position = pathPosition.position;
+        transform.rotation = pathPosition.rotation;
+        rb.velocity = Vector3.zero;
+
+        rb.freezeRotation = false;
     }
 }
