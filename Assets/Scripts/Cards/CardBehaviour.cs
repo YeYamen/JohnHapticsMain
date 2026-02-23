@@ -17,9 +17,6 @@ public class CardBehaviour : Raycastables
     [SerializeField] AudioClip sound;
     public string hapticName;
 
-    Vector3 closeUp = new UnityEngine.Vector3(0.5f, 0.05f, -0.3f);
-    Vector3 originalPos;
-
     [Space, Header("Card Events"), Space]
     public UnityEvent correctCardEvent;
     public UnityEvent wrongCardEvent;
@@ -41,14 +38,11 @@ public class CardBehaviour : Raycastables
             }
         }
 
-        originalPos = transform.localPosition;
     }
 
     public override void Casted()
     {
         CardHover();
-
-        transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
     }
 
     private void FixedUpdate()
@@ -58,7 +52,6 @@ public class CardBehaviour : Raycastables
             OffCardHover();
         }
 
-        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
     public void CorrectCardAction()

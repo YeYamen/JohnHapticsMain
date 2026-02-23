@@ -16,15 +16,24 @@ public class TravelPath : MonoBehaviour
     private bool isMoving = false;
     bool isScaling = false;
 
+    [SerializeField] Transform minAngle;
+    [SerializeField] Transform maxAngle;
+    [SerializeField] AnimationCurve rotationCurve;
+
+    Quaternion rotation;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rotation = minAngle.rotation;
     }
 
     private void FixedUpdate()
     {
         if(isMoving == true) { MoveCheck(); }
         if(isScaling == true) { ScaleObject(); }
+        SwitchRotation();
     }
 
     public void MoveCheck()
@@ -59,6 +68,33 @@ public class TravelPath : MonoBehaviour
             isScaling = false;
         }
         Vector3 newScale = Vector3.Lerp(transform.localScale, scaleSize, scaleSpeed.Evaluate(Time.deltaTime));
+        
         transform.localScale = newScale;
+    }
+
+
+    public void CheckRotate()
+    {
+        SwitchRotation();
+    }
+
+
+    void SwitchRotation()
+    {
+        float rot = Quaternion.Dot(transform.rotation, rotation);
+        if (rot > 0.99)
+        {
+            if (rotation == minAngle.rotation)
+            {
+                rotation = maxAngle.rotation;
+            }
+            else if (rotation == maxAngle.rotation)
+            {
+                rotation = minAngle.rotation;
+            }
+        }
+
+        Quaternion newRot = Quaternion.Lerp(transform.rotation, rotation, rotationCurve.Evaluate(Time.deltaTime));
+        rb.MoveRotation(newRot);
     }
 }

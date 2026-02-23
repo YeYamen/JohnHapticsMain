@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using HapE.Unity;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<CardBehaviour> cards;
     public GameObject currentCard;
     public CardBehaviour correctCard;
+
+    public UnityEvent winEvent;
 
     private void Start()
     {
@@ -40,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         if (cards == null || cards.Count == 0)
         {
-            print("Cards list is empty or null!");
+            WinEvent();
             return;
         }
 
@@ -100,6 +104,22 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Scene Management
+
+    public void ChooseRandomScene()
+    {
+        int index = Random.Range(0, 3);
+
+        SceneManager.LoadScene(index);
+    }
+
+    public void ChooseNextScene(string nextScene)
+    {
+        SceneManager.LoadScene(nextScene);
+    }
+
+    #endregion
+
     public void ChooseObject()
     {
         if(currentCard == null) return;
@@ -144,4 +164,13 @@ public class GameManager : MonoBehaviour
 
         return path;
     }
+
+    #region UnityEvents
+
+    internal void WinEvent()
+    {
+        winEvent?.Invoke();
+    }
+
+    #endregion
 }

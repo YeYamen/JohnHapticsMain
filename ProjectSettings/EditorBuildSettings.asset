@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TarotScenes/Patricia.unity
+    guid: fa9f064d6bb56e04db2572f36dec6205
+  - enabled: 1
+    path: Assets/Scenes/TarotScenes/Laura.unity
+    guid: 9e44ffab8ac4b7341b0e3aa6ba2e3ead
+  - enabled: 1
+    path: Assets/Scenes/TarotScenes/Tony.unity
+    guid: b5d17d83c5e8fe7449654093697ac8aa
+  - enabled: 1
+    path: Assets/Scenes/TarotScenes/Yasmin.unity
+    guid: e96ad51ccdc8d8b4c9bbab08d2239676
   m_configObjects: {}
