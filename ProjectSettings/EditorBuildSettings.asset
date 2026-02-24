@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TarotScenes/Tony22.unity
     guid: 167173d7bf6a9d545bcea83adf63cf2c
+  - enabled: 1
+    path: Assets/Scenes/TarotScenes/John.unity
+    guid: f146528277415ba4b8ab0e889f96efc4
   m_configObjects: {}

@@ -9810,17 +9810,17 @@ MonoBehaviour:
   correctCardEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3509100050267186347}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 324064505}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: e2f2d0521e7e25746aadf89b3179c576, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_StringArgument: MouthAnimation
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1676399884}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
@@ -9833,6 +9833,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: MouthAnimation
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3509100050267186347}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   wrongCardEvent:
     m_PersistentCalls:
@@ -11102,17 +11114,17 @@ MonoBehaviour:
   correctCardEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1427166129039312100}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 324064505}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: e2f2d0521e7e25746aadf89b3179c576, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_StringArgument: MouthAnimation
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1676399884}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
@@ -11125,6 +11137,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: MouthAnimation
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1427166129039312100}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   wrongCardEvent:
     m_PersistentCalls:
@@ -11576,17 +11600,17 @@ MonoBehaviour:
   correctCardEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1492252199126367072}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 324064505}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: e2f2d0521e7e25746aadf89b3179c576, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_StringArgument: MouthAnimation
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1676399884}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
@@ -11599,6 +11623,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: MouthAnimation
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1492252199126367072}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   wrongCardEvent:
     m_PersistentCalls:
@@ -16668,6 +16704,10 @@ PrefabInstance:
     - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
       propertyPath: quiltTexture
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
+      propertyPath: targetDisplay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
       propertyPath: forceDisplayIndex

@@ -33210,6 +33210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
+      propertyPath: targetDisplay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528524149823249526, guid: 9fa1ea7cbd1b710408e5452a7ed3da96, type: 3}
       propertyPath: forceDisplayIndex
       value: 1
       objectReference: {fileID: 0}

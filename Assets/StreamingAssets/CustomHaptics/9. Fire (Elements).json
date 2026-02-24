@@ -20,11 +20,11 @@
     "enabled": true,
     "nodes": [
       {
-        "intensity": 1.0,
+        "intensity": 0.9373521,
         "t": 17.256
       },
       {
-        "intensity": 1.0,
+        "intensity": 0.9373521,
         "t": 0.0
       }
     ],
@@ -64,13 +64,20 @@
     "length": 3,
     "repeat_count": 1
   },
-  "fixation_mode": 2,
+  "fixation_mode": 0,
   "fixation_offset": {
     "x": 0.0,
-    "y": 0.0,
+    "y": 0.2,
     "z": 0.0,
-    "magnitude": 0.0,
-    "sqrMagnitude": 0.0
+    "normalized": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 0.2,
+    "sqrMagnitude": 0.0400000028
   },
   "hapticName": "9. Fire (Elements)",
   "brushName": "Primitive",
