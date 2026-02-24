@@ -9,9 +9,12 @@ public class PoseActions : MonoBehaviour
     private Collider rightCol;
     private bool isColliding = false;
 
+    private GameManager gameManager;
+
     private void Start()
     {
         rightCol = rightHandDetection.GetComponent<SphereCollider>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     public void EnableLaser(LineRenderer laser)
@@ -57,4 +60,5 @@ public class PoseActions : MonoBehaviour
             isColliding = false;
         }
     }
+
 }

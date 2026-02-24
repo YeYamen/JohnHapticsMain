@@ -36,7 +36,7 @@ public class TravelPath : MonoBehaviour
     {
         distanceFromPosition = Vector3.Distance(transform.position, pathPosition.position);
 
-        if (distanceFromPosition > 0.7)
+        if (distanceFromPosition > 0.5)
         {
             MoveBack();
             return;

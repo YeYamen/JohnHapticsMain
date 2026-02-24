@@ -7907,7 +7907,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.18329354, g: 0.7264151, b: 0.030838363, a: 1}
+      maxColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8992,8 +8992,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.0133209415, g: 0.3773585, b: 0, a: 1}
-        key1: {r: 0.28763893, g: 0.8666667, b: 0, a: 1}
+        key0: {r: 0, g: 0, b: 0, a: 1}
+        key1: {r: 0.01764706, g: 0.01764706, b: 0.01764706, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9001,7 +9001,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 24672
+        ctime1: 56476
         ctime2: 65535
         ctime3: 65535
         ctime4: 0
@@ -19547,7 +19547,7 @@ GameObject:
   - component: {fileID: 1015971357}
   - component: {fileID: 1015971356}
   m_Layer: 0
-  m_Name: Card_Blue
+  m_Name: Card_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19807,23 +19807,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a889ccd7db914b040a1befb585d2bab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 9d7fe85f7f6d1f8479e2403744941f3a, type: 3}
-  hapticName: blue
+  sound: {fileID: 8300000, guid: 11d8f1325a4dc66419af5d6f949d00a6, type: 3}
+  hapticName: white
   correctCardEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 324064505}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e2f2d0521e7e25746aadf89b3179c576, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1015971354}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -22609,7 +22597,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.0040049935, g: 0.2823747, b: 0.8490566, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -23694,8 +23682,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.103571415, b: 0.5, a: 1}
-        key1: {r: 0, g: 0.17758028, b: 0.754717, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -23703,7 +23691,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 20624
+        ctime1: 65535
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -23720,7 +23708,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -27536,7 +27524,7 @@ GameObject:
   - component: {fileID: 2002322161}
   - component: {fileID: 2002322160}
   m_Layer: 0
-  m_Name: Card_Green
+  m_Name: Card_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27796,23 +27784,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a889ccd7db914b040a1befb585d2bab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: f164b5bcde9f67c4abfb738b80ac486f, type: 3}
-  hapticName: green-1
+  sound: {fileID: 8300000, guid: 363a0e84d775e194988331f565a149e4, type: 3}
+  hapticName: black
   correctCardEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 324064505}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e2f2d0521e7e25746aadf89b3179c576, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2002322158}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -33424,7 +33400,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8584906, g: 0, b: 0.07069937, a: 1}
+      maxColor: {r: 0.9433962, g: 0.9196497, b: 0.022249907, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -34509,8 +34485,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5377358, g: 0.012682447, b: 0.012682447, a: 1}
-        key1: {r: 0.8679245, g: 0, b: 0, a: 1}
+        key0: {r: 0.8773585, g: 0.8126511, b: 0.0041384934, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -34518,7 +34494,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 21974
+        ctime1: 65535
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -34535,7 +34511,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -38452,7 +38428,7 @@ GameObject:
   - component: {fileID: 6761776633389189288}
   - component: {fileID: 6761776633389189287}
   m_Layer: 0
-  m_Name: Card_Red
+  m_Name: Card_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44475,23 +44451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a889ccd7db914b040a1befb585d2bab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: a9e108f668469eb4da3ec7bbc0682210, type: 3}
-  hapticName: red
+  sound: {fileID: 8300000, guid: a1a464c90c999fa4593e39adba8e1171, type: 3}
+  hapticName: yellow
   correctCardEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 324064505}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e2f2d0521e7e25746aadf89b3179c576, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4325558518426622395}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
